@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code-Collab</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "Noto Sans KR", sans-serif;
+        list-style: none;
+      }
+      header {
+        position: relative;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #424242;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+      }
+
+      section {
+        height: 200vh;
+        padding-top: 100px;
+        background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
+      }
+    </style>
   </head>
   <body>
-    <h1>Prajjwal</h1>
+    <header class="navbar" id="navbar">
+      <nav></nav>
+    </header>
+
+    <section>hello</section>
+
+    <script>
+      document.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 10) {
+          navbar.style.backgroundColor = "Black";
+          navbar.style.opacity = "0.3";
+        } else {
+          navbar.style.backgroundColor = "White";
+          navbar.style.opacity = "1";
+        }
+      });
+    </script>
   </body>
 </html>
