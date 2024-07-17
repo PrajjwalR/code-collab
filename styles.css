@@ -1,0 +1,97 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feedback-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-top: 4mm ridge rgba(211, 220, 50, .6);
+    /* Top border */
+    border-bottom: 4mm ridge rgba(211, 220, 50, .6);
+    /* Bottom border */
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.feedback-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: calc(100% - 120px);
+    /* Adjust width to fit between buttons */
+    margin: 0 60px;
+    /* Margin to match the button width */
+}
+
+.feedback-item {
+    flex: 0 0 33.33%;
+    /* Show 3 items at a time */
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.feedback-item img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.scroll-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 20px;
+    /* Increase padding for larger arrows */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.left-btn {
+    left: 0;
+    /* Position at the left edge */
+}
+
+.right-btn {
+    right: 0;
+    /* Position at the right edge */
+}
+
+.feedback-item blockquote {
+    font-family: 'Georgia', serif;
+    /* Change font family */
+    font-style: italic;
+    /* Italicize the quote */
+    quotes: "“" "”" "‘" "’";
+    /* Define quote marks */
+}
+
+.feedback-item blockquote:before {
+    content: open-quote;
+}
+
+.feedback-item blockquote:after {
+    content: close-quote;
+}
