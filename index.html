@@ -23,52 +23,86 @@
         width: 1518px;
         margin: auto;
         height: 100px;
-        background-color: rgb(70, 78, 94);
+        background-color: rgb(16, 2, 67);
         color: rgb(0, 0, 0);
         display: flex;
         align-items: center;
         justify-content: center;
         transition: background-color 0.1s ease, opacity 0.3s ease;
         z-index: 1000;
-      }
-      .header nav {
-        display: flex;
-        justify-content: space-around;
+        background-position: center;
+        background-size: cover;
         width: 100%;
-        /* padding-left: 50px;
-        padding-right: 50px; */
       }
 
-      .logo img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50px;
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
       }
-      .nav-links-regester {
-        width: 50%;
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+      nav .fa {
+        display: none;
+      }
+      .logo-container a {
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      .nav-links-regester ul {
-        display: flex;
-        width: 80%;
-        justify-content: space-around;
-      }
 
-      .nav-links-regester ul li a {
+      .logo-container a span {
         color: white;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-left: 10px;
         font-size: 20px;
-        font-style: oblique;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 10px;
+      }
+      .logo-container a span:hover {
       }
 
       /* Sections */
+
       .section1 {
         margin: auto;
         max-height: 100vh;
         max-width: 1518px;
         overflow-y: hidden;
+
         padding-top: 100px;
         background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
         -webkit-background-size: cover;
@@ -76,42 +110,140 @@
   -o-background-size: cover;
   background-size: cover; 
       }
+      .fixed-button-container {
+        position: fixed;
+        right: 30px;
+        top: 30rem;
+      }
+
+      .fixed-button-container a button {
+        border-radius: 50px;
+        background-color: #050228;
+        color: white;
+        height: 50px;
+        width: 50px;
+        font-size: 10px;
+        border-bottom: 2px solid rgb(188, 23, 23);
+        border-top: 2px solid rgb(17, 228, 77);
+      }
+      .fixed-button-container a button:hover {
+        border-bottom: 2px solid rgb(17, 228, 77);
+        border-top: 2px solid rgb(188, 23, 23);
+      }
 
       /* Footer */
+
       footer {
         margin: auto;
         background-color: rgb(16, 2, 67);
         height: 100px;
-        padding: 100px;
+        padding: 150px;
         display: flex;
         width: 1518px;
         justify-content: center;
         flex-flow: column;
         align-items: center;
       }
+
       .footer-logo-social {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 80%;
         margin: auto;
-        /* padding: 40px; */
       }
+
       .footer-logo-social a img {
         width: 90px;
         height: 90px;
         border-radius: 50px;
       }
+
       .footer-logo-social .socials i {
-        color: white;
+        color: rgb(255, 255, 255);
         padding: 20px;
-        font-size: 20px;
+        font-size: 50px;
       }
 
       .description-text {
         color: white;
-        padding: 20px;
-        padding: 30px;
+        align-items: baseline;
+        display: flex;
+      }
+
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
+
+      .description-text p span {
+        color: red;
+      }
+
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite;
+      }
+
+      .socials .fa-instagram:hover {
+        color: rgb(168, 25, 127);
+      }
+      .socials .fa-x-twitter:hover {
+        color: rgb(57, 55, 57);
+      }
+      .socials .fa-linkedin-in:hover {
+        color: rgb(18, 37, 160);
+      }
+
+      /* Animations */
+
+      @keyframes beat {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.3);
+        }
+        60% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Media Queries */
+
+      @media (max-width: 700px) {
+        .text-box h1 {
+          font-size: 20px;
+        }
+        .nav-links ul li {
+          display: block;
+        }
+        .nav-links {
+          position: absolute;
+          background: #f44336;
+          height: 100vh;
+          width: 200px;
+          top: 0;
+          right: -200px;
+          text-align: left;
+          z-index: 2;
+          transition: 1s;
+        }
+        nav .fa {
+          display: block;
+          color: white;
+          margin: 10px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .nav-links ul {
+          padding: 20px;
+        }
       }
       /* section1 */
       .glass-panel {
@@ -285,23 +417,30 @@ margin-bottom: 30px;
   <body>
     <header class="header" id="header">
       <nav>
-        <div class="logo">
-          <img
-            src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-            alt=""
-          />
+        <div class="logo-container">
+          <a href="index.html"
+            ><img
+              src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+              alt="Logo"
+            />
+            <span>Code Collab</span></a
+          >
         </div>
-        <div class="nav-links-regester">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
           <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="home">About</a></li>
-            <li><a href="home">Events</a></li>
-            <li><a href="home">Resources</a></li>
-            <li><a href="home">Get in Touch</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">COURSE</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">CONTACT US</a></li>
           </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
     </header>
+
 
     <section class="section1">
       <div id="main">
@@ -314,6 +453,7 @@ margin-bottom: 30px;
               <a href="https://superdevresources.com/glassmorphism-ui-css/" target="_blank" class="glass-button">REGISTER HERE</a>
             </div>
           </div>
+        <a href="#"><button>Back on TOP</button></a>
  
     </div>
     </section>
@@ -352,44 +492,51 @@ margin-bottom: 30px;
           </div>
           <button>Join This Event</button>
         </div>
-      </div>
-    </section>
+        
+
 
     <footer>
       <div class="footer-logo-social">
-        <a href="#"
+        <a href="index.html"
           ><img
             src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-            alt=""
+            alt="Footer Logo"
         /></a>
         <div class="socials">
-          <a href=""> <i class="fa-brands fa-instagram"></i> </a
-          ><a href=""> <i class="fa-brands fa-x-twitter"></i> </a
-          ><a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
       <div class="description-text">
         <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
         <p>
-          Made with <span> &#10084; </span> in Masai School by Freedom
-          Developers 005
+          Made with <span class="heart">&#10084;</span> in Masai School by
+          Freedom_Developers_005
         </p>
       </div>
     </footer>
-
-    <!-- Script -->
 
     <script>
       document.addEventListener("scroll", function () {
         const header = document.getElementById("header");
         if (window.scrollY > 10) {
-          header.style.backgroundColor = "Black";
+          header.style.backgroundColor = "black";
           header.style.opacity = "0.3";
         } else {
-          header.style.backgroundColor = "rgb(70, 78, 94)";
+          header.style.backgroundColor = " rgb(16, 2, 67)";
           header.style.opacity = "1";
         }
       });
+
+      const navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
     </script>
     <script
       src="https://kit.fontawesome.com/52cf30c454.js"
