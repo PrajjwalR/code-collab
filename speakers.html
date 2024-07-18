@@ -35,12 +35,17 @@
             font-weight: 600;
             margin-bottom: 20px;
             text-align: center;
+            background: -webkit-linear-gradient(#3009cbcf, #200353);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
         }
 
         section#s4 .s4-container .s4-content .s4-time {
             display: flex;
             align-items: center;
-            align-content: start;
+            justify-content: space-evenly;
             flex-wrap: wrap;
 
         }
@@ -50,6 +55,19 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .clock {
+            background: hsl(227, 22%, 92%);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-left: 40px;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .clock #time {
+            font-size: 3em;
         }
 
         section#s4 .s4-container .s4-content .s4-time .s4-timezone {
@@ -62,15 +80,21 @@
         section#s4 .s4-container .s4-content .s4-time .s4-date {
             display: flex;
             margin-left: 60px;
-            align-items: center;
+            align-items: start;
             flex-wrap: wrap;
+            margin-top: 20px;
+
         }
 
         section#s4 .s4-container .s4-content .s4-time .s4-date div {
             border: 2px solid rgb(116, 29, 221);
             padding: 20px;
             color: rgb(123, 136, 189);
+            border-radius: 10px;
+            margin: 10px;
         }
+
+
 
         section#s4 .s4-container .s4-content .s4-time .s4-date>div:nth-of-type(2) {
             background-color: rgb(116, 29, 221);
@@ -85,7 +109,8 @@
         section#s4 .s4-container .s4-content .s4-time .s4-timezone div {
             border: 2px solid rgb(75, 94, 184);
             padding: 15px;
-            color: rgb(74, 95, 182)
+            color: rgb(74, 95, 182);
+            border-radius: 10px;
         }
 
         section#s4 .s4-container .s4-content .s4-time .s4-timezone>div:nth-of-type(1) {
@@ -100,11 +125,11 @@
         }
 
         section#s4 .s4-container .cards {
-            display:flex;
+            display: flex;
             justify-content: space-evenly;
             align-items: center;
             flex-wrap: wrap;
-            margin:70px 0px 40px 0px;
+            margin: 70px 0px 40px 0px;
 
 
         }
@@ -112,8 +137,32 @@
         section#s4 .s4-container .cards .card {
             padding: 40px;
             background-color: rgb(233, 217, 255);
-            margin:20px;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
+            /*property duration,property duration         hover karne pe ye transition hoga            */
+            /* animation: cardAnimation 10s linear 4s infinite alternate; */
+            /* this property work on single element                             */
+            height: 650px;
+            width: 550px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 30px;
+        }
 
+        .card:hover {
+            transform: scale(0.8);
+            box-shadow: 10px 10px 10px 10px rgba(7, 211, 34, 0.166);
+        }
+
+        @keyframes cardAnimation {
+            0% {
+                opacity: 0.3;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         section#s4 .s4-container .cards .card .content>h2 {
@@ -122,19 +171,21 @@
         }
 
         section#s4 .s4-container .cards .card .content>p {
-            max-width:500px;
-            text-align: justify;
+            max-width: 500px;
+            word-wrap: break-word;
             color: rgb(12, 1, 117);
             font-weight: 600;
-            font-size: 40px;
+            font-size: 20px;
             margin-bottom: 20px;
         }
 
         section#s4 .s4-container .cards .card .content>button {
-            padding: 10px 30px 10px 30px;
+            padding: 20px;
             margin-bottom: 20px;
             background-color: rgb(116, 28, 219);
             color: white;
+            border: none;
+            border-radius: 20px;
         }
 
         section#s4 .s4-container .cards .card .speakers .speaker {
@@ -143,8 +194,8 @@
             align-items: center;
         }
 
-        section#s4 .s4-container .cards .card .speakers .speaker .speaker-info{
-            margin-left:20px;
+        section#s4 .s4-container .cards .card .speakers .speaker .speaker-info {
+            margin-left: 20px;
         }
 
         section#s4 .s4-container .cards .card .speakers .speaker>img {
@@ -166,7 +217,7 @@
                         <h3>Timezone</h3>
                     </div>
                     <div class="s4-timezone">
-                        <div>PT</div>
+                        <div>IST</div>
                         <div>ET</div>
                         <div>GMT</div>
                     </div>
@@ -180,6 +231,9 @@
                             <p>July 18th</p>
                         </div>
                     </div>
+                    <div class="clock">
+                        <div id="time"></div>
+                    </div>
                 </div>
 
             </div>
@@ -187,7 +241,7 @@
                 <div class="card">
                     <div class="content">
                         <h2>07:00 am - 07:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <p>Fireside Chat with Er. Appu Kumar: How AI and Technology are Shaping the Future of Work</p>
                         <button>AI Session</button>
                     </div>
                     <div class="speakers">
@@ -195,14 +249,14 @@
                             <img
                                 src="https://floqast.com/wp-content/uploads/2024/07/headshot-patrick-sievering-125x125.jpg">
                             <div class="speaker-info">
-                                <h2>Appu Kumar</h2>
+                                <h2>Er. Appu Kumar</h2>
                                 <p>Senior Developer, code-collab India</p>
                             </div>
                         </div>
                         <div class="speaker">
                             <img src="https://floqast.com/wp-content/uploads/2023/06/hugh-oneill-125x125.jpg">
                             <div class="speaker-info">
-                                <h2>Aman Bind</h2>
+                                <h2>Er. Aman Bind</h2>
                                 <p>Senior Architecture, code-collab India</p>
                             </div>
                         </div>
@@ -213,20 +267,47 @@
                 <div class="card">
                     <div class="content">
                         <h2>08:00 am - 08:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <p>FloQast AI: Navigating the Fronteirs of Artificial Intelligence</p>
                         <button>AI Session</button>
                     </div>
                     <div class="speakers">
                         <div class="speaker">
                             <img
-                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                                src="https://floqast.com/wp-content/uploads/2023/06/chris-sluty-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Er. Prajjwal Chauhan</h2>
+                                <p>CEO and Co-Founder, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2023/06/cullen-zandstra-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. Atul Raman</h2>
+                                <p>CTO and Co-Founder, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2>09:00 am - 09:50 am</h2>
+                        <p>Building the Future of Software Engineering: AI Integration and Implementation Strategies</p>
+                        <button>Software Engineering Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
                             <div class="speaker-info">
                                 <h2>Dr. APJ Abdul kalam</h2>
                                 <p>Senior Tech Advisor, code-collab India</p>
                             </div>
                         </div>
                         <div class="speaker">
-                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
                             <div class="speaker-info">
                                 <h2>Dr. CV Raman</h2>
                                 <p>Head Architecture, code-collab India</p>
@@ -238,50 +319,25 @@
 
                 <div class="card">
                     <div class="content">
-                        <h2>08:00 am - 08:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
-                        <button>AI Session</button>
+                        <h2>10:00 am - 10:50 am</h2>
+                        <p>The Future of Finance - Leading Transformation with Tech and GenAI for Sustainable Growth</p>
+                        <button>Finance Session</button>
                     </div>
                     <div class="speakers">
                         <div class="speaker">
-                            <img
-                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <img src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
                             <div class="speaker-info">
-                                <h2>Dr. APJ Abdul kalam</h2>
-                                <p>Senior Tech Advisor, code-collab India</p>
+                                <h2>Dr. Rajendra Prasad</h2>
+                                <p>code-collab India Partner</p>
                             </div>
                         </div>
-                        <div class="speaker">
-                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
-                            <div class="speaker-info">
-                                <h2>Dr. CV Raman</h2>
-                                <p>Head Architecture, code-collab India</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">Learn More</a>
-                </div>
-
-                <div class="card">
-                    <div class="content">
-                        <h2>08:00 am - 08:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
-                        <button>AI Session</button>
-                    </div>
-                    <div class="speakers">
                         <div class="speaker">
                             <img
-                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                                src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
                             <div class="speaker-info">
-                                <h2>Dr. APJ Abdul kalam</h2>
-                                <p>Senior Tech Advisor, code-collab India</p>
-                            </div>
-                        </div>
-                        <div class="speaker">
-                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
-                            <div class="speaker-info">
-                                <h2>Dr. CV Raman</h2>
-                                <p>Head Architecture, code-collab India</p>
+                                <h2>Dr. Radha Krishnan</h2>
+                                <p>code-collab India Director
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -291,24 +347,25 @@
 
                 <div class="card">
                     <div class="content">
-                        <h2>08:00 am - 08:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
-                        <button>AI Session</button>
+                        <h2>11:00 am - 11:50 am</h2>
+                        <p>The Future of Mathematics - Leading Transformation with Tech and GenAI for Sustainable Growth
+                        </p>
+                        <button>Mathematic With AI session</button>
                     </div>
                     <div class="speakers">
                         <div class="speaker">
-                            <img
-                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <img src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
                             <div class="speaker-info">
-                                <h2>Dr. APJ Abdul kalam</h2>
-                                <p>Senior Tech Advisor, code-collab India</p>
+                                <h2>Arya Bhat</h2>
+                                <p>Senior Mathematics Advisor, code-collab India</p>
                             </div>
                         </div>
                         <div class="speaker">
-                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
                             <div class="speaker-info">
-                                <h2>Dr. CV Raman</h2>
-                                <p>Head Architecture, code-collab India</p>
+                                <h2>Ramanujan</h2>
+                                <p>Mathematics Expert, code-collab India</p>
                             </div>
                         </div>
                     </div>
@@ -317,21 +374,21 @@
 
                 <div class="card">
                     <div class="content">
-                        <h2>08:00 am - 08:50 am</h2>
-                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <h2>12:00 pm- 12:50 pm</h2>
+                        <p>FloForward Roadmap Round Up</p>
                         <button>AI Session</button>
                     </div>
                     <div class="speakers">
                         <div class="speaker">
-                            <img
-                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <img src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
                             <div class="speaker-info">
-                                <h2>Dr. APJ Abdul kalam</h2>
-                                <p>Senior Tech Advisor, code-collab India</p>
+                                <h2>Er. Prajjwal Chauhan</h2>
+                                <p>CEO and Co-Founder, code-collab India</p>
                             </div>
                         </div>
                         <div class="speaker">
-                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
                             <div class="speaker-info">
                                 <h2>Dr. CV Raman</h2>
                                 <p>Head Architecture, code-collab India</p>
@@ -344,6 +401,8 @@
             </div>
         </div>
     </section>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
