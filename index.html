@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code-Collab</title>
     <style>
+      body{
+        background-color: rgb(33, 39, 71);
+      }
       * {
         box-sizing: border-box;
         margin: 0;
@@ -17,6 +20,7 @@
       .header {
         position: sticky;
         top: 0;
+        width: 1518px;
         margin: auto;
         height: 100px;
         background-color: rgb(16, 2, 67);
@@ -93,10 +97,18 @@
 
       /* Sections */
 
-      section {
-        height: 200vh;
+      .section1 {
+        margin: auto;
+        max-height: 100vh;
+        max-width: 1518px;
+        overflow-y: hidden;
+
         padding-top: 100px;
         background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
       }
       .fixed-button-container {
         position: fixed;
@@ -122,11 +134,12 @@
       /* Footer */
 
       footer {
+        margin: auto;
         background-color: rgb(16, 2, 67);
         height: 100px;
         padding: 150px;
         display: flex;
-        width: 100vw;
+        width: 1518px;
         justify-content: center;
         flex-flow: column;
         align-items: center;
@@ -232,6 +245,173 @@
           padding: 20px;
         }
       }
+      /* section1 */
+      .glass-panel {
+  color: #fff;
+  margin:   70px auto;
+  /* position: absolute;
+  top: 100px;
+  left: 600px; */
+  text-align: center;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 600px;
+  border-radius: 15px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.glass-button {
+  display: inline-block;
+  padding: 24px 32px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Extra styles for demo */
+/* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
+
+
+.glass-panel {  
+  max-width: 600px;
+}
+
+.glass-button {
+  margin: 15px;
+  margin-top: 40px;
+}
+
+.glass-panel>h1,.glass-panel> h1 a {
+  min-height: 120px;
+  width: 90%;
+  max-width: 700px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+  font-size: 80px;
+  color: rgba(255,255,255,0.8);
+}
+.glass-panel>h3{
+  font-size: 30px;
+}
+
+.glass-panel>p {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  color: rgba(255,255,255,0.6);
+}
+       /* section1 */
+/* section2 */
+.section2{
+  width: 1518px;
+  margin: auto;
+}
+ .container2{
+  
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+ 
+ }
+ .container2>div:nth-of-type(1){
+  width: 48%;
+ 
+ }
+ .container2>div:nth-of-type(1)>img{
+width: 100%;
+ }
+ .container2>div:nth-of-type(2){
+  width: 48%;
+ color: white;
+ }
+ 
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --colorMain: #c0c0c0;
+  --brShadow: -6px 6px 15px rgba(0,0,0,0.5);
+  --tlShadow: 6px -6px 15px rgba(255,255,255,0.8);
+}
+.container2>div:nth-of-type(2) {
+  margin: 0;
+  
+  font-family: sans-serif;
+  height: auto;
+ 
+  align-items:center;
+}
+.right2>h5{
+font-size: 40px;
+margin-top: 10px;
+margin-bottom: 30px;
+}
+.right2 >h1{
+  margin-bottom: 20px;
+  color: var(--colorMain);
+  font-size: 55px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-shadow: var(--brShadow), 
+               var(--tlShadow);
+  position: relative;
+  
+  &::before, &::after {
+    position: absolute;
+    background: var(--colorMain);
+    
+    border-radius: 10%;
+    
+  }
+}
+  .event2{
+    display: flex;
+    width: 80%;
+  
+    margin-top: 80px;
+    justify-content: space-around;
+  }
+  .container2>div:nth-of-type(2)>button{
+    padding: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+    margin-left: 50px;
+    border: none;
+    border-radius: 10px;
+  }
+  .event2>div>div>img{
+    width: 50px;
+  }
+  .event2>div>div{
+    align-items: center;
+    
+  }
+  .where{
+    margin-left: 10px;
+  }
+   
+   
+
+ /* section2 */
     </style>
   </head>
   <body>
@@ -261,11 +441,59 @@
       </nav>
     </header>
 
-    <section>
-      <div class="fixed-button-container">
+
+    <section class="section1">
+      <div id="main">
+        <div class="glass-panel">
+            <p>13-15 August 2024  Tech Hotel - Mumbai</p>
+            <h1>TECH</h1>
+            <h3>CONFERENCE <span>2024</span></h3>
+            <div class="glass-toolbar">
+              <button class="glass-button">BOOK TICKET</button>
+              <a href="https://superdevresources.com/glassmorphism-ui-css/" target="_blank" class="glass-button">REGISTER HERE</a>
+            </div>
+          </div>
         <a href="#"><button>Back on TOP</button></a>
-      </div>
+ 
+    </div>
     </section>
+<br><br><br><br><br>
+    <section class="section2">
+      <div class="container2">
+        <div>
+          <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/about_new.png" alt="">
+        </div>
+        <div class="right2">
+          <h5>ABOUT EVENT</h5>
+          <h1>Welcome to Tech Conference</h1>
+          <h1>Meetup 2024</h1>
+          <p>The annual Tech Innovators Conference brings together leading minds in technology for a three-day event. Attendees can explore the latest advancements in AI, cybersecurity, and software development through keynote speeches, workshops, and networking sessions. This conference is an excellent opportunity to learn from industry experts and discover emerging trends shaping the future of technology.</p>
+          <div class="event2">
+            <div>
+              <div style="display: flex;">
+                <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/location-2.png" alt="">
+
+                <h1 class="where">Where</h1>
+              </div>
+              <br>
+              
+              <p>Tech park White Field</p>
+              <p>53007, Bangalore India</p>
+            </div>
+            <div>
+              <div style="display: flex;">
+                <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/check.png" alt="">
+                <h1 class="where">When</h1>
+              </div>
+             <br>
+              <p>18-21 August 2024</p>
+              <p>10:00-17:00</p>
+            </div>
+          </div>
+          <button>Join This Event</button>
+        </div>
+        
+
 
     <footer>
       <div class="footer-logo-social">
