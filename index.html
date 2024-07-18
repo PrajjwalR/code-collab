@@ -328,15 +328,30 @@
  
  }
  .container2>div:nth-of-type(1){
-  width: 48%;
+  width: 42%;
+  height: 500px;
  
  }
  .container2>div:nth-of-type(1)>img{
 width: 100%;
+margin-top: 50px;
+height: 100%;
+
  }
  .container2>div:nth-of-type(2){
-  width: 48%;
+  width: 50%;
+  padding: 20px;
+  height: 550px;
+
+  align-items: center;
+  text-align: center;
  color: white;
+
+ 
+ }
+ .container2>div:nth-of-type(2)>p{
+  text-align: justify;
+  margin-top: 5px;
  }
  
 
@@ -344,7 +359,7 @@ width: 100%;
   box-sizing: border-box;
 }
 :root {
-  --colorMain: #c0c0c0;
+  --colorMain: #fbfbfb;
   --brShadow: -6px 6px 15px rgba(0,0,0,0.5);
   --tlShadow: 6px -6px 15px rgba(255,255,255,0.8);
 }
@@ -357,14 +372,15 @@ width: 100%;
   align-items:center;
 }
 .right2>h5{
-font-size: 40px;
-margin-top: 10px;
+font-size: 30px;
+
 margin-bottom: 30px;
 }
 .right2 >h1{
-  margin-bottom: 20px;
+  text-align: start;
+  margin-bottom: 0px;
   color: var(--colorMain);
-  font-size: 55px;
+  font-size: 45px;
   font-weight: bold;
   font-family: sans-serif;
   text-transform: uppercase;
@@ -382,14 +398,15 @@ margin-bottom: 30px;
 }
   .event2{
     display: flex;
-    width: 80%;
+    width: 100%;
   
-    margin-top: 80px;
-    justify-content: space-around;
+    margin-top: 40px;
+    justify-content: space-between;
   }
+  
   .container2>div:nth-of-type(2)>button{
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
     font-weight: bold;
     margin-left: 50px;
     border: none;
@@ -405,19 +422,49 @@ margin-bottom: 30px;
   .where{
     margin-left: 10px;
   }
-   
+  .right2>button {
+  padding: 1.5em 5em;
+  background: rgb(16, 19, 35);
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(131, 129, 129, 0.7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+}
+.right2>button:hover {
+  transform: scale(1.1);
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+.right2>button:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
    
 
  /* section2 */
  /* section21 */
  .section21{
-  
+ 
         margin: auto;
-        height: 500px;
+        height: 400px;
         max-width: 1518px;
         overflow-y: hidden;
         padding-top: 100px;
-        background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
+        background-image: url(https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/11/counter-2.jpg);
         -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -425,17 +472,75 @@ margin-bottom: 30px;
       
  }
  .container21{
+ 
+   
   margin: auto;
   width: 90%;
   align-items: center;
   display: flex;
   justify-content: space-between;
  }
- .container21>div{
+ /* Rotate */
+ .container21>div {
+ 
   
-  height: 400px;
+	/* -webkit-transform: rotate(15deg) scale(1.4);
+	transform: rotate(15deg) scale(1.4);
+	-webkit-transition: .3s ease-in-out; */
+
+ 
+}
+/* @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0), rotate(15deg);
+    }
+
+    
+} */
+
+@keyframes ker {
+  95% {
+    transform: scale(0.8);
+  }
+}
+/* .container21>div:hover  {
+	-webkit-transform: rotate(15deg) scale(1.1);
+	transform: rotate(13deg) scale(0.9);
+} */
+ .container21>div{
+  animation: ker;
+  margin-top: -50px;
+  animation-timeline: scroll();
+  cursor: pointer;
+
+
+ 
+    /* animation: fadeInUp 3s  forwards; */
+    /* animation-timeline:scroll() ;
+    animation-range-start: cover 5vh;
+    animation-range-end: cover 80vh; */
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
   width: 300px;
-  border: 1px solid red;
+  align-items: center;
+  color: white;
+ 
+ }
+ .container21>div>div>h1{
+  font-size: 50px;
+ }
+ .container21>div>div>p{
+  font-size: 30px;
+ }
+ .container21>div>img{
+  width: 100px;
+  height: 100px;
  }
  /* section21 */
     </style>
@@ -491,8 +596,8 @@ margin-bottom: 30px;
         </div>
         <div class="right2">
           <h5>ABOUT EVENT</h5>
-          <h1>Welcome to Tech Conference</h1>
-          <h1>Meetup 2024</h1>
+          <h1>Welcome to Tech Conference Meetup 2024</h1>
+          <h1> </h1>
           <p>The annual Tech Innovators Conference brings together leading minds in technology for a three-day event. Attendees can explore the latest advancements in AI, cybersecurity, and software development through keynote speeches, workshops, and networking sessions. This conference is an excellent opportunity to learn from industry experts and discover emerging trends shaping the future of technology.</p>
           <div class="event2">
             <div>
@@ -518,9 +623,43 @@ margin-bottom: 30px;
           </div>
           <button>Join This Event</button>
         </div>
-        
+        </div>
         </section>
-       <div class="container">
+        <br><br><br><br><br>
+
+        <section class="section21">
+          <div class="container21">
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/megaphone.png" alt="">
+              <div>
+                <h1>54+</h1>
+                <p>Speakers</p>
+              </div>
+            </div>
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/goal.png" alt="">
+              <div>
+                <h1>70+</h1>
+                <p>workshops</p>
+              </div>
+            </div>
+            <div>
+             <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/movie-tickets.png" alt="">
+             <div>
+              <h1>100+</h1>
+              <p>Tickets</p>
+             </div>
+            </div>
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/support.png" alt="">
+              <div>
+                <h1>100+</h1>
+                <p>Sponsors</p>
+              </div>
+            </div>
+          </div>
+        </section>
+       
     <section class="feedback-wrapper">
       <div class="feedback-section">
         <div class="feedback-container">
