@@ -1,5 +1,7 @@
 /* styles.css */
 
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -13,15 +15,15 @@ body {
 .feedback-wrapper {
     display: flex;
     justify-content: center;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 60px auto;
+    padding: 0px;
     width: 80%;
-    border-top: 4mm ridge rgba(211, 220, 50, .6);
+    border-top: 10px solid #0f0e0e12;
     /* Top border */
-    border-bottom: 4mm ridge rgba(211, 220, 50, .6);
+    border-bottom: 10px solid #0f0e0e12;
     /* Bottom border */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .feedback-section {
@@ -55,6 +57,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .scroll-btn {
@@ -86,6 +89,7 @@ body {
     /* Italicize the quote */
     quotes: "“" "”" "‘" "’";
     /* Define quote marks */
+    color: antiquewhite;
 }
 
 .feedback-item blockquote:before {
@@ -94,4 +98,87 @@ body {
 
 .feedback-item blockquote:after {
     content: close-quote;
+}
+
+.feedback-item :hover {
+    transform: scale(1.04);
+    z-index: 10;
+}
+
+/* --------------------------section 6 --------------------------------------------- */
+
+.faq-container {
+    max-width: 1000px;
+    margin: 75px auto;
+
+
+}
+
+.faq-box{
+    flex-basis: 50%;
+    padding:0;
+    z-index: 1;
+    width: 100%;
+}
+
+.faq-header{
+    margin: 30px;
+    /* font-size: 2rem; */
+    font-weight: 700;
+}
+
+#faq{
+    font-size:45px;
+}
+
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item.active {
+    box-shadow: 0 0 10px rgba(225, 218, 12, 0.7);
+    /* Glowing border effect */
+}
+
+.faq-item:hover {
+    box-shadow: 0 0 10px rgba(218, 9, 190, 0.7);
+    /* Glowing border effect */
+}
+
+.faq-question {
+    background-color: #f0f0f0;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.faq-question.active {
+    background-color: #e0e0e0;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+.faq-header{
+    font: size 80px;
+    text-align: center;
 }
