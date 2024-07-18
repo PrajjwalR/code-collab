@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section#s4 .s4-container {
+            width: 90vw;
+            margin: auto;
+        }
+
+        section#s4 .s4-container .s4-content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px 10px 10px 20px;
+        }
+
+        section#s4 .s4-container .s4-content>h2 {
+            font-weight: 600;
+            font-size: 40px;
+            text-align: center;
+            color: rgb(75, 94, 184);
+            margin-bottom: 20px;
+        }
+
+        section#s4 .s4-container .s4-content>p {
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time {
+            display: flex;
+            align-items: center;
+            align-content: start;
+            flex-wrap: wrap;
+
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-zone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-timezone {
+            display: flex;
+            gap: 10px;
+            margin-left: 40px;
+            flex-wrap: wrap;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-date {
+            display: flex;
+            margin-left: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-date div {
+            border: 2px solid rgb(116, 29, 221);
+            padding: 20px;
+            color: rgb(123, 136, 189);
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-date>div:nth-of-type(2) {
+            background-color: rgb(116, 29, 221);
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-date div:hover {
+            background-color: rgb(116, 29, 221);
+            color: yellow;
+            cursor: pointer;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-timezone div {
+            border: 2px solid rgb(75, 94, 184);
+            padding: 15px;
+            color: rgb(74, 95, 182)
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-timezone>div:nth-of-type(1) {
+            background-color: rgb(75, 94, 184);
+            color: white;
+        }
+
+        section#s4 .s4-container .s4-content .s4-time .s4-timezone div:hover {
+            background-color: rgb(116, 29, 221);
+            color: white;
+            cursor: pointer;
+        }
+
+        section#s4 .s4-container .cards {
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            margin:70px 0px 40px 0px;
+
+
+        }
+
+        section#s4 .s4-container .cards .card {
+            padding: 40px;
+            background-color: rgb(233, 217, 255);
+            margin:20px;
+
+        }
+
+        section#s4 .s4-container .cards .card .content>h2 {
+            color: rgb(26, 2, 81);
+            margin: 20px 10px 20px 0px;
+        }
+
+        section#s4 .s4-container .cards .card .content>p {
+            max-width:500px;
+            text-align: justify;
+            color: rgb(12, 1, 117);
+            font-weight: 600;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        section#s4 .s4-container .cards .card .content>button {
+            padding: 10px 30px 10px 30px;
+            margin-bottom: 20px;
+            background-color: rgb(116, 28, 219);
+            color: white;
+        }
+
+        section#s4 .s4-container .cards .card .speakers .speaker {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        section#s4 .s4-container .cards .card .speakers .speaker .speaker-info{
+            margin-left:20px;
+        }
+
+        section#s4 .s4-container .cards .card .speakers .speaker>img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="s4">
+        <div class="s4-container">
+            <div class="s4-content">
+                <h2>Agenda</h2>
+                <p>Please note that once you register for TakeControl, you will automatically be registered for all
+                    sessions.</p>
+                <div class="s4-time">
+                    <div class="s4-zone">
+                        <img src="https://floqast.com/wp-content/themes/FloQast/assets/images/theme/globe-tc24.png">
+                        <h3>Timezone</h3>
+                    </div>
+                    <div class="s4-timezone">
+                        <div>PT</div>
+                        <div>ET</div>
+                        <div>GMT</div>
+                    </div>
+                    <div class="s4-date">
+                        <div class="s4-schedule">
+                            <h2>DAY 1</h2>
+                            <p>July 17th</p>
+                        </div>
+                        <div class="s4-schedule">
+                            <h2>DAY 1</h2>
+                            <p>July 18th</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="content">
+                        <h2>07:00 am - 07:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-patrick-sievering-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Appu Kumar</h2>
+                                <p>Senior Developer, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/hugh-oneill-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Aman Bind</h2>
+                                <p>Senior Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2>08:00 am - 08:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Dr. APJ Abdul kalam</h2>
+                                <p>Senior Tech Advisor, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. CV Raman</h2>
+                                <p>Head Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2>08:00 am - 08:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Dr. APJ Abdul kalam</h2>
+                                <p>Senior Tech Advisor, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. CV Raman</h2>
+                                <p>Head Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2>08:00 am - 08:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Dr. APJ Abdul kalam</h2>
+                                <p>Senior Tech Advisor, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. CV Raman</h2>
+                                <p>Head Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+
+                <div class="card">
+                    <div class="content">
+                        <h2>08:00 am - 08:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Dr. APJ Abdul kalam</h2>
+                                <p>Senior Tech Advisor, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. CV Raman</h2>
+                                <p>Head Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <h2>08:00 am - 08:50 am</h2>
+                        <p>Fireside Chat with Salim Ismail: How AI and Technology are Shaping the Future of Work</p>
+                        <button>AI Session</button>
+                    </div>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img
+                                src="https://floqast.com/wp-content/uploads/2024/07/headshot-salim-ismail-125x125.jpg">
+                            <div class="speaker-info">
+                                <h2>Dr. APJ Abdul kalam</h2>
+                                <p>Senior Tech Advisor, code-collab India</p>
+                            </div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://floqast.com/wp-content/uploads/2023/06/mike-whitmire-headshot-new-125x125.png">
+                            <div class="speaker-info">
+                                <h2>Dr. CV Raman</h2>
+                                <p>Head Architecture, code-collab India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
