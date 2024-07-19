@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             question.classList.toggle('active');
             answer.classList.toggle('active');
-            icon.textContent = icon.textContent === '+' ? 'x' : '+';
+            icon.textContent = icon.textContent === '+' ? '\u00D7' : '+';
             icon.style.transform = "rotate(360deg)"
-            faqItem.classList.toggle('active');
+            
         });
     });
 });

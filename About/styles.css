@@ -1,0 +1,37 @@
+@supports (overflow: clip) {
+    .app-main {
+        overflow-x: clip;
+    }
+}
+
+.app-main {
+    padding-top: var(--app-header-height);
+    overflow-x: hidden;
+}
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+.img1{
+    box-sizing: border-box;
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+/* .img1{
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize--contrast;
+    display: block;
+} */
+
