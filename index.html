@@ -1,744 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css">
-  <title>Code-Collab</title>
-  <style>
-    body {
-      background-color: rgb(33, 39, 71);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      font-family: "Noto Sans KR", sans-serif;
-      list-style: none;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      width: 1518px;
-      margin: auto;
-      height: 100px;
-      background-color: rgb(16, 2, 67);
-      color: rgb(0, 0, 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.1s ease, opacity 0.3s ease;
-      z-index: 1000;
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-    }
-
-    nav {
-      display: flex;
-      padding: 2% 6%;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    nav img {
-      width: 75px;
-      height: 68px;
-      border-radius: 53px;
-    }
-
-    .nav-links {
-      flex: 1;
-      text-align: right;
-    }
-
-    .nav-links ul li {
-      list-style: none;
-      display: inline-block;
-      padding: 8px 12px;
-      position: relative;
-    }
-
-    .nav-links ul li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .nav-links ul li::after {
-      content: "";
-      width: 0%;
-      height: 2px;
-      background: #ff0000;
-      display: block;
-      margin: auto;
-      transition: 0.5s;
-    }
-
-    .nav-links ul li:hover::after {
-      width: 100%;
-    }
-
-    nav .fa {
-      display: none;
-    }
-
-    .logo-container a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo-container a span {
-      color: white;
-      margin-left: 10px;
-      font-size: 20px;
-      font-weight: 600;
-      border-bottom: 2px solid red;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      padding-bottom: 10px;
-    }
-
-    .logo-container a span:hover {}
-
-    /* Sections */
-
-    .section1 {
-      margin: auto;
-      max-height: 100vh;
-      max-width: 1518px;
-      overflow-y: hidden;
-
-      padding-top: 100px;
-      background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-    .fixed-button-container {
-      position: fixed;
-      right: 30px;
-      top: 30rem;
-    }
-
-    .fixed-button-container a button {
-      border-radius: 50px;
-      background-color: #050228;
-      color: white;
-      height: 50px;
-      width: 50px;
-      font-size: 10px;
-      border-bottom: 2px solid rgb(188, 23, 23);
-      border-top: 2px solid rgb(17, 228, 77);
-    }
-
-    .fixed-button-container a button:hover {
-      border-bottom: 2px solid rgb(17, 228, 77);
-      border-top: 2px solid rgb(188, 23, 23);
-    }
-
-    /* Footer */
-
-    footer {
-      margin: auto;
-      background-color: rgb(16, 2, 67);
-      height: 100px;
-      padding: 150px;
-      display: flex;
-      width: 1518px;
-      justify-content: center;
-      flex-flow: column;
-      align-items: center;
-    }
-
-    .footer-logo-social {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 80%;
-      margin: auto;
-    }
-
-    .footer-logo-social a img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50px;
-    }
-
-    .footer-logo-social .socials i {
-      color: rgb(255, 255, 255);
-      padding: 20px;
-      font-size: 50px;
-    }
-
-    .description-text {
-      color: white;
-      align-items: baseline;
-      display: flex;
-    }
-
-    .description-text p {
-      font-size: 15px;
-      padding: 10px 50px;
-    }
-
-    .description-text p span {
-      color: red;
-    }
-
-    .heart {
-      font-size: 50px;
-      color: red;
-      animation: beat 1s infinite;
-    }
-
-    .socials .fa-instagram:hover {
-      color: rgb(168, 25, 127);
-    }
-
-    .socials .fa-x-twitter:hover {
-      color: rgb(57, 55, 57);
-    }
-
-    .socials .fa-linkedin-in:hover {
-      color: rgb(18, 37, 160);
-    }
-
-    /* Animations */
-
-    @keyframes beat {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: scale(1);
-      }
-
-      40% {
-        transform: scale(1.3);
-      }
-
-      60% {
-        transform: scale(1.1);
-      }
-    }
-
-    /* Media Queries */
-
-    @media (max-width: 700px) {
-      .text-box h1 {
-        font-size: 20px;
-      }
-
-      .nav-links ul li {
-        display: block;
-      }
-
-      .nav-links {
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-      }
-
-      nav .fa {
-        display: block;
-        color: white;
-        margin: 10px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-
-      .nav-links ul {
-        padding: 20px;
-      }
-    }
-
-    /* section1 */
-    .glass-panel {
-      color: #fff;
-      margin: 70px auto;
-      /* position: absolute;
-  top: 100px;
-  left: 600px; */
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      width: 600px;
-      border-radius: 15px;
-      padding: 32px;
-      backdrop-filter: blur(10px);
-    }
-
-    .glass-button {
-      display: inline-block;
-      padding: 24px 32px;
-      border: 0;
-      text-decoration: none;
-      border-radius: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(30px);
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
-
-    .glass-button:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Extra styles for demo */
-    /* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
-
-
-    .glass-panel {
-      max-width: 600px;
-    }
-
-    .glass-button {
-      margin: 15px;
-      margin-top: 40px;
-    }
-
-    .glass-panel>h1,
-    .glass-panel>h1 a {
-      min-height: 120px;
-      width: 90%;
-      max-width: 700px;
-      vertical-align: middle;
-      text-align: center;
-      margin: 0 auto;
-      text-decoration: none;
-      color: #fff;
-      font-size: 80px;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .glass-panel>h3 {
-      font-size: 30px;
-    }
-
-    .glass-panel>p {
-      width: 80%;
-      margin: 0 auto;
-      padding-bottom: 32px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    /* section1 */
-    /* section2 */
-    .section2 {
-      width: 1518px;
-      margin: auto;
-    }
-
-    .container2 {
-
-      width: 90%;
-      display: flex;
-      justify-content: space-between;
-      margin: auto;
-
-    }
-
-    .container2>div:nth-of-type(1) {
-      width: 48%;
-
-    }
-
-    .container2>div:nth-of-type(1)>img {
-      width: 100%;
-    }
-
-    .container2>div:nth-of-type(2) {
-      width: 48%;
-      color: white;
-    }
-
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    :root {
-      --colorMain: #c0c0c0;
-      --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);
-      --tlShadow: 6px -6px 15px rgba(255, 255, 255, 0.8);
-    }
-
-    .container2>div:nth-of-type(2) {
-      margin: 0;
-
-      font-family: sans-serif;
-      height: auto;
-
-      align-items: center;
-    }
-
-    .right2>h5 {
-      font-size: 40px;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-
-    .right2>h1 {
-      margin-bottom: 20px;
-      color: var(--colorMain);
-      font-size: 55px;
-      font-weight: bold;
-      font-family: sans-serif;
-      text-transform: uppercase;
-      text-shadow: var(--brShadow),
-        var(--tlShadow);
-      position: relative;
-
-      &::before,
-      &::after {
-        position: absolute;
-        background: var(--colorMain);
-
-        border-radius: 10%;
-
-      }
-    }
-
-    .event2 {
-      display: flex;
-      width: 80%;
-
-      margin-top: 80px;
-      justify-content: space-around;
-    }
-
-    .container2>div:nth-of-type(2)>button {
-      padding: 20px;
-      margin-top: 50px;
-      font-weight: bold;
-      margin-left: 50px;
-      border: none;
-      border-radius: 10px;
-    }
-
-    .event2>div>div>img {
-      width: 50px;
-    }
-
-    .event2>div>div {
-      align-items: center;
-
-    }
-
-    .where {
-      margin-left: 10px;
-    }
-
-
-
-    /* section2 */
-  </style>
-</head>
-
-<body>
-  <header class="header" id="header">
-    <nav>
-      <div class="logo-container">
-        <a href="index.html"><img
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code-Collab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav>
+        <div class="logo-container">
+          <a href="index.html"
+            ><img
+              src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+              alt="Logo"
+            />
+            <span>Code Collab</span></a
+          >
+        </div>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./course.html">COURSE</a></li>
+            <li><a href="./blog.html">BLOG</a></li>
+            <li><a href="./contact.html">CONTACT US</a></li>
+          </ul>
+          <a href="./loginpage.html">
+            <button class="login">LOGIN</button>
+          </a>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+    <!-- Aman Code -->
+
+    <section class="section1">
+      <div id="main">
+        <div class="glass-panel">
+          <p>13-15 August 2024 Tech Hotel - Mumbai</p>
+          <h1>TECH</h1>
+          <h3>CONFERENCE <span>2024</span></h3>
+          <div class="glass-toolbar">
+            <button class="glass-button">BOOK TICKET</button>
+            <a href="./register.html" class="glass-button">REGISTER HERE</a>
+          </div>
+        </div>
+        <a href="#"><button>Back on TOP</button></a>
+      </div>
+    </section>
+    <br /><br /><br /><br /><br />
+    <section class="section2">
+      <div class="container2">
+        <div>
+          <img
+            src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/about_new.png"
+            alt=""
+          />
+        </div>
+        <div class="right2">
+          <h5>ABOUT EVENT</h5>
+          <h1>Welcome to Tech Conference Meetup 2024</h1>
+          <h1></h1>
+          <p>
+            The annual Tech Innovators Conference brings together leading minds
+            in technology for a three-day event. Attendees can explore the
+            latest advancements in AI, cybersecurity, and software development
+            through keynote speeches, workshops, and networking sessions. This
+            conference is an excellent opportunity to learn from industry
+            experts and discover emerging trends shaping the future of
+            technology.
+          </p>
+          <div class="event2">
+            <div>
+              <div style="display: flex">
+                <img
+                  src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/location-2.png"
+                  alt=""
+                />
+
+                <h1 class="where">Where</h1>
+              </div>
+              <br />
+
+              <p>Tech park White Field</p>
+              <p>53007, Bangalore India</p>
+            </div>
+            <div>
+              <div style="display: flex">
+                <img
+                  src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/check.png"
+                  alt=""
+                />
+                <h1 class="where">When</h1>
+              </div>
+              <br />
+              <p>18-21 August 2024</p>
+              <p>10:00-17:00</p>
+            </div>
+          </div>
+          <button>Join This Event</button>
+        </div>
+      </div>
+    </section>
+    <br /><br /><br /><br /><br />
+
+    <section class="section21">
+      <div class="container21">
+        <div>
+          <img
+            src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/megaphone.png"
+            alt=""
+          />
+          <div>
+            <h1>54+</h1>
+            <p>Speakers</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/goal.png"
+            alt=""
+          />
+          <div>
+            <h1>70+</h1>
+            <p>workshops</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/movie-tickets.png"
+            alt=""
+          />
+          <div>
+            <h1>100+</h1>
+            <p>Tickets</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/support.png"
+            alt=""
+          />
+          <div>
+            <h1>100+</h1>
+            <p>Sponsors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appu Code -->
+    <section id="s4">
+      <div class="s4-container">
+        <div class="s4-content">
+          <h2>Agenda</h2>
+          <p>
+            Please note that once you register for TakeControl, you will
+            automatically be registered for all sessions.
+          </p>
+          <div class="s4-time">
+            <div class="s4-zone">
+              <img
+                src="https://floqast.com/wp-content/themes/FloQast/assets/images/theme/globe-tc24.png"
+              />
+              <h3>Timezone</h3>
+            </div>
+            <div class="s4-timezone">
+              <div>IST</div>
+              <div>ET</div>
+              <div>GMT</div>
+            </div>
+            <div class="s4-date">
+              <div class="s4-schedule">
+                <h2>DAY 1</h2>
+                <p>July 17th</p>
+              </div>
+              <div class="s4-schedule">
+                <h2>DAY 1</h2>
+                <p>July 18th</p>
+              </div>
+            </div>
+            <div class="clock">
+              <div id="time"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="content">
+              <h2>07:00 am - 07:50 am</h2>
+              <p>
+                Chat with Er. Appu Kumar: How AI and Technology are Shaping the
+                Future of Work
+              </p>
+              <button>AI Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U078MPK21L4-69ed4f89fda8-512"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Appu Kumar</h2>
+                  <p>Senior Developer, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://avatars.githubusercontent.com/u/97456502?v=4&size=64"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Aman Bind</h2>
+                  <p>Senior Architecture, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="card">
+            <div class="content">
+              <h2>08:00 am - 08:50 am</h2>
+              <p>
+                FloQast AI: Navigating the Fronteirs of Artificial Intelligence
+              </p>
+              <button>AI Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://avatars.githubusercontent.com/u/108671779?v=4"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. Prajjwal Chauhan</h2>
+                  <p>CEO and Co-Founder, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U0782UVA0ET-61f410bf067a-512"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. Atul Raman</h2>
+                  <p>CTO and Co-Founder, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+
+          <!-- <div class="card">
+            <div class="content">
+              <h2>09:00 am - 09:50 am</h2>
+              <p>
+                Building the Future of Software Engineering: AI Integration and
+                Implementation Strategies
+              </p>
+              <button>Software Engineering Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://i.pinimg.com/736x/9c/13/0f/9c130f4a650c7f7c799a898d101c474c.jpg"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. APJ Abdul kalam</h2>
+                  <p>Senior Tech Advisor, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdqIOJ6YylWKoB95q3aNxbGPWkiaizWCNAw2UGKDqYsmlddMZYhRE98oaQEQ&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. CV Raman</h2>
+                  <p>Head Architecture, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div> -->
+
+          <!-- <div class="card">
+            <div class="content">
+              <h2>10:00 am - 10:50 am</h2>
+              <p>
+                The Future of Finance - Leading Transformation with Tech and
+                GenAI for Sustainable Growth
+              </p>
+              <button>Finance Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7SSnbplc1iMvoCuPThVUlo__h9Jp7utr4fj81pJHCmZTfVYzrfbJIJPcITQ&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. Rajendra Prasad</h2>
+                  <p>code-collab India Partner</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_iFx4-OoUYcwz2tagHEURW7kLAdd7xLeeJ3RV_nfOnYbmhpFXRh_xCPFo_A&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. Sarvepalli Radhakrishnan</h2>
+                  <p>code-collab India Director</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div> -->
+
+          <!-- <div class="card">
+            <div class="content">
+              <h2>11:00 am - 11:50 am</h2>
+              <p>
+                The Future of Mathematics - Leading Transformation with Tech and
+                GenAI for Sustainable Growth
+              </p>
+              <button>Mathematic With AI session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://i.pinimg.com/564x/9b/56/6f/9b566fccefacf3311681792a3c0a40a3.jpg"
+                />
+                <div class="speaker-info">
+                  <h2>Arya Bhat</h2>
+                  <p>Senior Mathematics Advisor, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGGdjiXXGrSCp7v5Zi4I5mEwJweSeK3TDaL1-t7F5byfbxSwKxoC1GOOaqMA&s"
+                />
+                <div class="speaker-info">
+                  <h2>Ramanujan</h2>
+                  <p>Mathematics Expert, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div> -->
+
+          <div class="card">
+            <div class="content">
+              <h2>12:00 pm- 12:50 pm</h2>
+              <p>FloForward Roadmap Round Up</p>
+              <button>AI Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://avatars.githubusercontent.com/u/108671779?v=4"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Prajjwal Chauhan</h2>
+                  <p>CEO and Co-Founder, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdqIOJ6YylWKoB95q3aNxbGPWkiaizWCNAw2UGKDqYsmlddMZYhRE98oaQEQ&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. CV Raman</h2>
+                  <p>Head Architecture, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="card">
+            <div class="content">
+              <h2>01:00 pm - 01:50 pm</h2>
+              <p>Introduction of WEB along with figma, Advanced Css</p>
+              <button>Web and AI Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U079BJ8SW9E-0ac7750a2ae6-512"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Rahul Rajeevan</h2>
+                  <p>Web Expert, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdqIOJ6YylWKoB95q3aNxbGPWkiaizWCNAw2UGKDqYsmlddMZYhRE98oaQEQ&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. CV Raman</h2>
+                  <p>Head Architecture, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="card">
+            <div class="content">
+              <h2>02:00 pm- 02:50 pm</h2>
+              <p>How we can do coding with Mathematic and AI?</p>
+              <button>DSA and AI Session</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U078L8AAN75-f94a1a44169b-512"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Mirza Faisal</h2>
+                  <p>DSA Expert, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdqIOJ6YylWKoB95q3aNxbGPWkiaizWCNAw2UGKDqYsmlddMZYhRE98oaQEQ&s"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. CV Raman</h2>
+                  <p>Head Architecture, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="card">
+            <div class="content">
+              <h2>03:00 pm- 3:50 pm</h2>
+              <p>EC connect, How will AI take your Interview???</p>
+              <button>Problem with AI</button>
+            </div>
+            <div class="speakers">
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U0794KJKFT3-b4ad36d99396-512"
+                />
+                <div class="speaker-info">
+                  <h2>Er. Vijeetha Venkat</h2>
+                  <p>Ec Expert, code-collab India</p>
+                </div>
+              </div>
+              <div class="speaker">
+                <img
+                  src="https://ca.slack-edge.com/T078YBF4E9W-U079E0MN1A7-ea40c6c7f674-512"
+                />
+                <div class="speaker-info">
+                  <h2>Dr. Abhishesh Kumar</h2>
+                  <p>Ec Expert, code-collab India</p>
+                </div>
+              </div>
+            </div>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------section 5 starts ------------------------------ -->
+    <div class="container">
+      <section class="feedback-wrapper">
+        <div class="feedback-section">
+          <div class="feedback-container">
+            <div class="feedback-item">
+              <img
+                src="https://media.istockphoto.com/id/1406197730/photo/portrait-of-a-young-handsome-indian-man.webp?b=1&s=170667a&w=0&k=20&c=KtmKHyOE6MJV0w2DiGX8P4399KHNbZ3p8lCjTEabGcY="
+                alt="User 1"
+              />
+              <blockquote>
+                The app made navigating the conference a breeze!
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://t3.ftcdn.net/jpg/06/20/53/68/360_F_620536814_v0h5OzfuAMjJL9of1MRnZAjYgAje8Y0z.jpg"
+                alt="User 2"
+              />
+              <blockquote>
+                Loved the real-time updates and speaker bios!
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://www.shutterstock.com/image-photo/close-head-shot-portrait-preppy-600nw-1433809418.jpg"
+                alt="User 3"
+              />
+              <blockquote>
+                Great user interface, very intuitive and user-friendly.
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://media.istockphoto.com/id/1398385392/photo/happy-young-millennial-indian-business-woman-head-shot-portrait.webp?b=1&s=170667a&w=0&k=20&c=e6MjwnLEgtkh_noLuMP5t9yHzTMN7XrrRq_KIfFYy38="
+                alt="User 4"
+              />
+              <blockquote>
+                The schedule feature kept me on track all day.
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721001600&semt=ais_user"
+                alt="User 5"
+              />
+              <blockquote>
+                Excellent design, everything was right at my fingertips.
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://media.istockphoto.com/id/1313849152/photo/photo-of-young-happy-cheerful-positive-smiling-girl-with-crossed-hands-wear-yellow-jumper.webp?b=1&s=170667a&w=0&k=20&c=3N9iaJiVl1iD-3svAibGq3V6ZBohn0Rsi4iY0RMEU5Y="
+                alt="User 6"
+              />
+              <blockquote>The live streaming quality was top-notch.</blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.webp?b=1&s=170667a&w=0&k=20&c=cVdVl-0bpliZ0Sduc7ZDkMPwLnbxaMXZONllS39oeFc="
+                alt="User 7"
+              />
+              <blockquote>
+                Fantastic way to enhance the conference experience!
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYh-qNAWSEBt5WfrovDg1Dc0K1a5KyZnt-2SjC8n7bKdIMXKiJ0GDF5-nC1bxrwxf7qI&usqp=CAU"
+                alt="User 8"
+              />
+              <blockquote>
+                I appreciated the personalized session recommendations.
+              </blockquote>
+            </div>
+            <div class="feedback-item">
+              <img
+                src="https://www.shutterstock.com/image-photo/happy-cheerful-45-year-old-600nw-2353012797.jpg"
+                alt="User 9"
+              />
+              <blockquote>
+                I appreciated the personalized session recommendations.
+              </blockquote>
+            </div>
+            <!-- Add more feedback items as needed -->
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------------section 6 start ------------------------------------------- -->
+      <section>
+        <div class="faq-header">
+          <div class="faq-container">
+            <div class="faq-box">
+              <h2 id="faq" class="faq-header">Frequently Asked Questions</h2>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>What is Code-Colalb?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Code-Collab is an innovative web application designed to
+                    streamline the experience of tech conferences. It offers
+                    features such as real-time updates, detailed speaker bios,
+                    session schedules, and interactive maps, all aimed at
+                    enhancing attendee engagement and making conference
+                    navigation easier. Whether you're a participant or an
+                    organizer, Code-Collab helps you stay informed and connected
+                    throughout the event.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>How much does Code-Collab cost?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Code-Collab is free to use for all standard features, making
+                    it accessible to everyone. For larger conferences or events
+                    with extensive room sizes and additional customization
+                    needs, there is a paid option available. This premium plan
+                    offers advanced features and enhanced support to accommodate
+                    bigger setups and more complex requirements.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>How can I join?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    To join Code-Collab, simply visit our website and sign up
+                    for an account. You can choose to register as an attendee,
+                    speaker, or organizer, depending on your role. Once
+                    registered, you'll gain access to the conference schedule,
+                    session details, and other essential features. If you’re
+                    organizing an event, you can also request a demo or contact
+                    our support team to learn more about our premium options and
+                    features.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>What can I do on Code-Collab?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Explore the Conference Schedule: View detailed session
+                    timings, topics, and speaker information. Connect with
+                    Speakers: Access speaker bios and reach out for networking
+                    or Q&A. Navigate the Event: Use interactive maps to find
+                    session rooms and other facilities. Receive Real-Time
+                    Updates: Stay informed with live notifications and
+                    announcements. Customize Your Experience: Save your favorite
+                    sessions and create a personalized agenda. Engage with
+                    Attendees: Participate in discussions, ask questions, and
+                    connect with fellow attendees. Whether you’re attending,
+                    speaking, or organizing, Code-Collab provides the tools to
+                    enhance your conference experience.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>Is Code-Collab helpful for coders?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Yes, Code-Collab offers sessions, resources, and networking
+                    opportunities tailored for coders, helping you stay updated,
+                    learn new skills, and connect with industry professionals.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3>Is Code-Collab free or paid?</h3>
+                  <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Code-Collab is free to use for standard features. There is a
+                    paid option available for larger conferences with additional
+                    customization needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- -------------------section 6 ends -------------------------------------- -->
+    </div>
+    <!-- ----------------------------Atul's sec 5 and 6 ends ------------------------------- -->
+
+    <footer>
+      <div class="footer-logo-social">
+        <a href="index.html"
+          ><img
             src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-            alt="Logo" />
-          <span>Code Collab</span></a>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()"></i>
-
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">COURSE</a></li>
-          <li><a href="">BLOG</a></li>
-          <li><a href="">CONTACT US</a></li>
-        </ul>
-      </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-  </header>
-
-
-  <section class="section1">
-    <div id="main">
-      <div class="glass-panel">
-        <p>13-15 August 2024 Tech Hotel - Mumbai</p>
-        <h1>TECH</h1>
-        <h3>CONFERENCE <span>2024</span></h3>
-        <div class="glass-toolbar">
-          <button class="glass-button">BOOK TICKET</button>
-          <a href="https://superdevresources.com/glassmorphism-ui-css/" target="_blank" class="glass-button">REGISTER
-            HERE</a>
+            alt="Footer Logo"
+        /></a>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-      <a href="#"><button>Back on TOP</button></a>
-
-    </div>
-  </section>
-  <br><br><br><br><br>
-  <section class="section2">
-    <div class="container2">
-      <div>
-        <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/about_new.png" alt="">
+      <div class="description-text">
+        <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
+        <p>
+          Made with <span class="heart">&#10084;</span> in Masai School by
+          Freedom_Developers_005
+        </p>
       </div>
-      <div class="right2">
-        <h5>ABOUT EVENT</h5>
-        <h1>Welcome to Tech Conference</h1>
-        <h1>Meetup 2024</h1>
-        <p>The annual Tech Innovators Conference brings together leading minds in technology for a three-day event.
-          Attendees can explore the latest advancements in AI, cybersecurity, and software development through keynote
-          speeches, workshops, and networking sessions. This conference is an excellent opportunity to learn from
-          industry experts and discover emerging trends shaping the future of technology.</p>
-        <div class="event2">
-          <div>
-            <div style="display: flex;">
-              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/location-2.png" alt="">
+    </footer>
 
-              <h1 class="where">Where</h1>
-            </div>
-            <br>
+    <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
 
-            <p>Tech park White Field</p>
-            <p>53007, Bangalore India</p>
-          </div>
-          <div>
-            <div style="display: flex;">
-              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/check.png" alt="">
-              <h1 class="where">When</h1>
-            </div>
-            <br>
-            <p>18-21 August 2024</p>
-            <p>10:00-17:00</p>
-          </div>
-        </div>
-        <button>Join This Event</button>
-      </div>
-
-  </section>
-  <!-- ------------------------------section 5 starts ------------------------------ -->
-  <div class="container">
-    <section class="feedback-wrapper">
-      <div class="feedback-section">
-        <div class="feedback-container">
-          <div class="feedback-item">
-            <img
-              src="https://media.istockphoto.com/id/1406197730/photo/portrait-of-a-young-handsome-indian-man.webp?b=1&s=170667a&w=0&k=20&c=KtmKHyOE6MJV0w2DiGX8P4399KHNbZ3p8lCjTEabGcY="
-              alt="User 1">
-            <blockquote> The app made navigating the conference a breeze! </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img src="https://t3.ftcdn.net/jpg/06/20/53/68/360_F_620536814_v0h5OzfuAMjJL9of1MRnZAjYgAje8Y0z.jpg"
-              alt="User 2">
-            <blockquote> Loved the real-time updates and speaker bios! </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img src="https://www.shutterstock.com/image-photo/close-head-shot-portrait-preppy-600nw-1433809418.jpg"
-              alt="User 3">
-            <blockquote > Great user interface, very intuitive and user-friendly.
-            </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://media.istockphoto.com/id/1398385392/photo/happy-young-millennial-indian-business-woman-head-shot-portrait.webp?b=1&s=170667a&w=0&k=20&c=e6MjwnLEgtkh_noLuMP5t9yHzTMN7XrrRq_KIfFYy38="
-              alt="User 4">
-            <blockquote> The schedule feature kept me on track all day. </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721001600&semt=ais_user"
-              alt="User 5">
-            <blockquote> Excellent design, everything was right at my fingertips. </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://media.istockphoto.com/id/1313849152/photo/photo-of-young-happy-cheerful-positive-smiling-girl-with-crossed-hands-wear-yellow-jumper.webp?b=1&s=170667a&w=0&k=20&c=3N9iaJiVl1iD-3svAibGq3V6ZBohn0Rsi4iY0RMEU5Y="
-              alt="User 6">
-            <blockquote> The live streaming quality was top-notch. </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://media.istockphoto.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.webp?b=1&s=170667a&w=0&k=20&c=cVdVl-0bpliZ0Sduc7ZDkMPwLnbxaMXZONllS39oeFc="
-              alt="User 7">
-            <blockquote> Fantastic way to enhance the conference experience! </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYh-qNAWSEBt5WfrovDg1Dc0K1a5KyZnt-2SjC8n7bKdIMXKiJ0GDF5-nC1bxrwxf7qI&usqp=CAU"
-              alt="User 8">
-            <blockquote> I appreciated the personalized session recommendations. </blockquote>
-          </div>
-          <div class="feedback-item">
-            <img
-              src="https://www.shutterstock.com/image-photo/happy-cheerful-45-year-old-600nw-2353012797.jpg"
-              alt="User 9">
-            <blockquote> I appreciated the personalized session recommendations. </blockquote>
-          </div>
-          <!-- Add more feedback items as needed -->
-        </div>
-      </div>
-    </section>
-    <!-- ---------------------------section 6 start ------------------------------------------- -->
-    <section>
-      <div class="faq-header">
-        <div class="faq-container">
-          <div class="faq-box">
-            <h2 id="faq" class="faq-header">Frequently Asked Questions</h2>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>What is Code-Colalb?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Code-Collab is an innovative web application designed to streamline the experience of tech conferences. It offers
-                features such as real-time updates, detailed speaker bios, session schedules, and interactive maps, all aimed at
-                enhancing attendee engagement and making conference navigation easier. Whether you're a participant or an organizer,
-                Code-Collab helps you stay informed and connected throughout the event.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>How much does Code-Collab cost?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Code-Collab is free to use for all standard features, making it accessible to everyone. For larger conferences or events
-                with extensive room sizes and additional customization needs, there is a paid option available. This premium plan offers
-                advanced features and enhanced support to accommodate bigger setups and more complex requirements.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>How can I join?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>To join Code-Collab, simply visit our website and sign up for an account. You can choose to register as an attendee,
-                speaker, or organizer, depending on your role. Once registered, you'll gain access to the conference schedule, session
-                details, and other essential features. If you’re organizing an event, you can also request a demo or contact our support
-                team to learn more about our premium options and features.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>What can I do on Code-Collab?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Explore the Conference Schedule: View detailed session timings, topics, and speaker information.
-                Connect with Speakers: Access speaker bios and reach out for networking or Q&A.
-                Navigate the Event: Use interactive maps to find session rooms and other facilities.
-                Receive Real-Time Updates: Stay informed with live notifications and announcements.
-                Customize Your Experience: Save your favorite sessions and create a personalized agenda.
-                Engage with Attendees: Participate in discussions, ask questions, and connect with fellow attendees.
-                Whether you’re attending, speaking, or organizing, Code-Collab provides the tools to enhance your conference experience.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>Is Code-Collab helpful for coders?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Yes, Code-Collab offers sessions, resources, and networking opportunities tailored for coders, helping you stay updated,
-                learn new skills, and connect with industry professionals.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>Is Code-Collab free or paid?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Code-Collab is free to use for standard features. There is a paid option available for larger conferences with
-                additional customization needs.</p>
-              </div>
-            </div>
-            <!-- <div class="faq-item">
-              <div class="faq-question">
-                <h3>Question 7?</h3>
-                <span class="toggle-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                <p>Answer to Question 7.</p>
-              </div>
-            </div>  -->
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-    <!-- -------------------section 6 ends -------------------------------------- -->
-  </div>
-  <!-- ----------------------------Atul's sec 5 and 6 ends ------------------------------- -->
-  <footer>
-    <div class="footer-logo-social">
-      <a href="index.html"><img
-          src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-          alt="Footer Logo" /></a>
-      <div class="socials">
-        <a href="#"><i class="fa-brands fa-instagram"></i> </a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <div class="description-text">
-      <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
-      <p>
-        Made with <span class="heart">&#10084;</span> in Masai School by
-        Freedom_Developers_005
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener("scroll", function () {
-      const header = document.getElementById("header");
-      if (window.scrollY > 10) {
-        header.style.backgroundColor = "black";
-        header.style.opacity = "0.3";
-      } else {
-        header.style.backgroundColor = " rgb(16, 2, 67)";
-        header.style.opacity = "1";
-      }
-    });
-
-    const navLinks = document.getElementById("navLinks");
-
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
-    function hideMenu() {
-      navLinks.style.right = "-200px";
-    }
-  </script>
-  <script src="https://kit.fontawesome.com/52cf30c454.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

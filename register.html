@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: rgb(16, 2, 67);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+      }
+
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        overflow: hidden;
+      }
+
+      .nav-links ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .nav-links ul li {
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+
+      nav .fa {
+        display: none;
+      }
+
+      .logo-container a {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-links .login {
+        width: 100px;
+        height: 35px;
+        margin-left: 35px;
+        background-color: green;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nav-links .login:hover {
+        background-color: rgb(39, 202, 39);
+        font-size: 17px;
+      }
+
+      /* Footer */
+
+      footer {
+        margin: auto;
+        background-color: rgb(16, 2, 67);
+
+        padding: 150px;
+        display: flex;
+        width: 1518px;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+      }
+
+      .footer-logo-social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
+
+      .footer-logo-social a img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+      }
+
+      .footer-logo-social .socials i {
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        font-size: 50px;
+      }
+
+      .description-text {
+        color: white;
+        align-items: baseline;
+        display: flex;
+      }
+
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
+
+      .description-text p span {
+        color: red;
+      }
+
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite;
+      }
+
+      .socials .fa-instagram:hover {
+        color: rgb(168, 25, 127);
+      }
+
+      .socials .fa-x-twitter:hover {
+        color: rgb(57, 55, 57);
+      }
+
+      .socials .fa-linkedin-in:hover {
+        color: rgb(18, 37, 160);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav>
+        <div class="logo-container">
+          <a href="index.html"
+            ><img
+              src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+              alt="Logo"
+            />
+            <span>Code Collab</span></a
+          >
+        </div>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./course.html">COURSE</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="./contact.html">CONTACT US</a></li>
+          </ul>
+          <!-- <a href="./loginpage.html">
+            <button class="login">
+              Login
+            </button>
+          </a> -->
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+    <div
+      class="flex mt-10 min-h-full flex-col justify-center px-6 py-12 lg:px-8"
+    >
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+          class="mx-auto h-10 w-auto"
+          src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+          alt="Your Company"
+        />
+        <h2
+          class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+        >
+          Sign up here
+        </h2>
+      </div>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Name</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Phone</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Email address</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Confirm Password</label
+              >
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-logo-social">
+        <a href="index.html"
+          ><img
+            src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+            alt="Footer Logo"
+        /></a>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="description-text">
+        <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
+        <p>
+          Made with <span class="heart">&#10084;</span> in Masai School by
+          Freedom_Developers_005
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
