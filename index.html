@@ -320,15 +320,31 @@
   margin: auto;
 }
  .container2{
-  
+ 
+  animation: co 2s ease-in-out;
+  animation-timeline: scroll();
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
  
  }
+ @keyframes co {
+        0%{
+            color: gray;
+            opacity: 0;
+            transform: scale(0.1);
+        }
+        40%{
+            opacity: 1;
+            transform: scale(1);
+            color: rgba(84, 80, 80, 0.079);
+        }
+   
+
+}
  .container2>div:nth-of-type(1){
-  width: 42%;
+  width: 38%;
   height: 500px;
  
  }
@@ -503,27 +519,18 @@ margin-bottom: 30px;
     
 } */
 
-@keyframes ker {
-  95% {
-    transform: scale(0.8);
-  }
-}
-/* .container21>div:hover  {
-	-webkit-transform: rotate(15deg) scale(1.1);
+
+.container21>div:hover  {
+transition: 3s forwerds;
 	transform: rotate(13deg) scale(0.9);
-} */
+}
  .container21>div{
+  position: relative;
   animation: ker;
   margin-top: -50px;
   animation-timeline: scroll();
   cursor: pointer;
-
-
- 
-    /* animation: fadeInUp 3s  forwards; */
-    /* animation-timeline:scroll() ;
-    animation-range-start: cover 5vh;
-    animation-range-end: cover 80vh; */
+border: 1px solid red;
   height: 300px;
   display: flex;
   justify-content: space-around;
@@ -532,6 +539,14 @@ margin-bottom: 30px;
   color: white;
  
  }
+ @keyframes ker {
+  50%{
+transform: rotateX(180deg);
+  }
+  95% {
+    transform: scale(0.8);
+  }
+}
  .container21>div>div>h1{
   font-size: 50px;
  }
@@ -561,9 +576,9 @@ margin-bottom: 30px;
           <i class="fa fa-times" onclick="hideMenu()"></i>
 
           <ul>
-            <li><a href="#">HOME</a></li>
+            <li><a href="./index.html">HOME</a></li>
             <li><a href="">ABOUT</a></li>
-            <li><a href="">COURSE</a></li>
+            <li><a href="./course.html">COURSE</a></li>
             <li><a href="">BLOG</a></li>
             <li><a href="">CONTACT US</a></li>
           </ul>
