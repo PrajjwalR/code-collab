@@ -114,6 +114,7 @@ nav .fa {
     padding: 10px;
     font-size: 15px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .nav-links .login:hover {
@@ -629,6 +630,8 @@ footer {
 section#s4 .s4-container {
     width: 90vw;
     margin: auto;
+    max-width: 1518px;
+    overflow-y: hidden;
 }
 
 section#s4 .s4-container .s4-content {
@@ -831,7 +834,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -845,8 +848,11 @@ body {
     border-top: 10px solid #0f0e0e12;
     /* Top border */
     border-bottom: 10px solid #0f0e0e12;
+
+    /* border:1px solid red; */
+    height:400px;
     /* Bottom border */
-    position: relative;
+    /* position: relative; */
     /* overflow: hidden; */
 }
 
@@ -855,6 +861,7 @@ body {
     align-items: center;
     width: 100%;
     position: relative;
+    height:auto;
 }
 
 .feedback-container {
@@ -863,16 +870,36 @@ body {
     width: calc(100% - 120px);
     /* Adjust width to fit between buttons */
     margin: 0 60px;
-    /* Margin to match the button width */
+    height: auto; /* Allow the container to expand with content */
+    overflow: visible; /* Ensure content is not clipped */
+   
+
+}
+
+.feedback-container>.feedback-item:nth-of-type(3n){
+    margin-right:0px;
+    margin-left:0px;
+    
 }
 
 .feedback-item {
     flex: 0 0 33.33%;
     /* Show 3 items at a time */
     text-align: center;
-    padding: 20px;
-    transition: opacity 0.3s ease-in-out;
+    padding-right: 20px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,transform-origin 0.3s ease-in-out;
     opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    margin-right:80px;
+    
+
+}
+
+.feedback-item:hover{
+    opacity:1;
+    transform:scale(0.8);
+    transform-origin: center;
 }
 
 .feedback-item img {
@@ -881,8 +908,10 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
-    transition: transform 0.3s ease-in-out;
+    
 }
+
+
 
 .scroll-btn {
     background-color: #ddd;
