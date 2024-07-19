@@ -49,16 +49,7 @@ let intervalId;
 function updateOpacity() {
   const container = document.querySelector(".feedback-container");
   const items = container.querySelectorAll(".feedback-item");
-  const containerWidth = container.clientWidth;
-  items.forEach((item) => {
-    const itemLeft = item.offsetLeft - scrollPosition;
-    const itemRight = itemLeft + item.clientWidth;
-    if (itemRight <= 0 || itemLeft >= containerWidth) {
-      item.style.opacity = "0";
-    } else {
-      item.style.opacity = "1";
-    }
-  });
+  
 }
 
 // function autoScroll() {
@@ -82,14 +73,7 @@ function autoScroll() {
   // Apply the scroll position
   container.style.transform = `translateX(-${scrollPosition}px)`;
 
-  // If we have reached the end, reset scroll position to start again
-  if (scrollPosition === 0) {
-    container.style.transition = "none"; // Disable transition for instant reset
-    setTimeout(() => {
-      container.style.transition = ""; // Re-enable transition after resetting
-    }, 50); // Small delay to ensure transition reset takes effect smoothly
-  }
-
+ 
   updateOpacity();
 }
 
@@ -109,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       stopAutoScroll();
-      item.parentElement.style.transform = "scale(1.2)";
+      item.parentElement.style.transform = "scale(1.04)";
       item.parentElement.style.zIndex = "10";
     });
 
