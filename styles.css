@@ -1,4 +1,4 @@
-/* Prajjal's CSS */
+/* Prajjwal's CSS */
 
 
 
@@ -11,35 +11,21 @@
     list-style: none;
     overflow-x: hidden;
 }
-body {
-    background-color: rgb(33, 39, 71);
-}
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: "Noto Sans KR", sans-serif;
-    list-style: none;
-}
 
 .header {
     position: fixed;
-    /* Make sure the navbar stays at the top */
     top: 0;
     width: 100%;
-    /* Ensure the navbar spans the full width */
     height: 80px;
-    /* Fixed height to prevent overflow */
     background-color: rgb(16, 2, 67);
     color: white;
-    /* Set color for better visibility */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s ease, opacity 0.3s ease;
     z-index: 1000;
+    overflow: hidden;
 }
 
 nav {
@@ -61,9 +47,9 @@ nav img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* Ensure items are centered vertically */
+   
     overflow: hidden;
-    /* Prevent overflow */
+   
 }
 
 .nav-links ul {
@@ -134,114 +120,7 @@ nav .fa {
     font-size: 17px;
 }
 
-/* .header {
-    
-    top: 0;
-    max-width: 1518px;
-    margin: auto;
-    height: 80px;
-    background-color: rgb(16, 2, 67);
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.1s ease, opacity 0.3s ease;
-    z-index: 1000;
-    background-position: center;
-    background-size: cover;
-}
 
-nav {
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-nav img {
-    width: 75px;
-    height: 68px;
-    border-radius: 53px;
-}
-
-.nav-links {
-    flex: 1;
-    text-align: right;
-    display: flex;
-    justify-content: end;
-}
-
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-
-.nav-links ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.nav-links ul li::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #ff0000;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
-    width: 100%;
-}
-
-nav .fa {
-    display: none;
-}
-
-.logo-container a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-container a span {
-    color: white;
-    margin-left: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    border-bottom: 2px solid red;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding-bottom: 10px;
-}
-
-.nav-links .login {
-    width: 100px;
-    height: 35px;
-    margin-left: 35px;
-    background-color: green;
-    border-radius: 15px;
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.nav-links .login:hover {
-    background-color: rgb(39, 202, 39);
-    font-size: 17px;
-
-}
-
-.logo-container a span:hover {} */
-
-/* Sections */
 
 .section1 {
     margin: auto;
@@ -284,7 +163,7 @@ nav .fa {
 footer {
     margin: auto;
     background-color: rgb(16, 2, 67);
-    /* height: 100px; */
+  
     padding: 150px;
     display: flex;
     width: 1518px;
@@ -775,7 +654,6 @@ section#s4 .s4-container .s4-content>p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 40px;
-    /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
 }
 
 section#s4 .s4-container .s4-content .s4-time {
@@ -875,9 +753,6 @@ section#s4 .s4-container .cards .card {
     background-color: rgb(233, 217, 255);
     margin: 50px;
     transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
-    /*property duration,property duration         hover karne pe ye transition hoga            */
-    /* animation: cardAnimation 10s linear 4s infinite alternate; */
-    /* this property work on single element                             */
     height: 650px;
     width: 550px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -962,14 +837,8 @@ body {
     padding: 0px;
     width: 80%;
     border-top: 10px solid #0f0e0e12;
-    /* Top border */
     border-bottom: 10px solid #0f0e0e12;
-
-    /* border:1px solid red; */
     height:400px;
-    /* Bottom border */
-    /* position: relative; */
-    /* overflow: hidden; */
 }
 
 .feedback-section {
@@ -984,10 +853,9 @@ body {
     display: flex;
     transition: transform 0.3s ease-in-out;
     width: calc(100% - 120px);
-    /* Adjust width to fit between buttons */
     margin: 0 60px;
-    height: auto; /* Allow the container to expand with content */
-    overflow: visible; /* Ensure content is not clipped */
+    height: auto; 
+    overflow: visible; 
    
 
 }
@@ -1000,7 +868,6 @@ body {
 
 .feedback-item {
     flex: 0 0 33.33%;
-    /* Show 3 items at a time */
     text-align: center;
     padding-right: 20px;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,transform-origin 0.3s ease-in-out;
@@ -1033,7 +900,6 @@ body {
     background-color: #ddd;
     border: none;
     padding: 20px;
-    /* Increase padding for larger arrows */
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -1043,21 +909,19 @@ body {
 
 .left-btn {
     left: 0;
-    /* Position at the left edge */
+   
 }
 
 .right-btn {
     right: 0;
-    /* Position at the right edge */
 }
 
 .feedback-item blockquote {
     font-family: 'Georgia', serif;
-    /* Change font family */
     font-style: italic;
-    /* Italicize the quote */
+    
     quotes: "“" "”" "‘" "’";
-    /* Define quote marks */
+  
     color: antiquewhite;
 }
 
@@ -1092,7 +956,7 @@ body {
 
 .faq-header {
     margin: 30px;
-    /* font-size: 2rem; */
+   
     font-weight: 700;
 }
 
@@ -1112,12 +976,12 @@ body {
 
 .faq-item.active {
     box-shadow: 0 0 10px rgba(225, 218, 12, 0.7);
-    /* Glowing border effect */
+    
 }
 
 .faq-item:hover {
     box-shadow: 0 0 10px rgba(218, 9, 190, 0.7);
-    /* Glowing border effect */
+    
 }
 
 .faq-question {

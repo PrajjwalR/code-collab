@@ -17,16 +17,17 @@
       }
 
       .header {
+
     position: fixed;
-    /* Make sure the navbar stays at the top */
+  
     top: 0;
     width: 100%;
-    /* Ensure the navbar spans the full width */
+   
     height: 80px;
-    /* Fixed height to prevent overflow */
+   
     background-color: rgb(16, 2, 67);
     color: white;
-    /* Set color for better visibility */
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,6 +126,10 @@ nav .fa {
     background-color: rgb(39, 202, 39);
     font-size: 17px;
 }
+ 
+     
+    
+
       .section1 {
         max-width: 1440px;
         height: 350px;
@@ -154,6 +159,7 @@ nav .fa {
         margin: auto;
       }
       .column {
+
 	margin: 15px 15px 0;
 	padding: 0;
 }
@@ -206,6 +212,60 @@ figure:hover+span {
 	bottom: -36px;
 	opacity: 1;
 }
+
+
+        margin: 15px 15px 0;
+        padding: 0;
+      }
+      .column:last-child {
+        padding-bottom: 60px;
+      }
+      .column::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      .column div {
+        position: relative;
+        float: left;
+        width: 300px;
+        height: 200px;
+        margin: 0 0 0 25px;
+        padding: 0;
+      }
+      .column div:first-child {
+        margin-left: 0;
+      }
+      .column div span {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        color: #444;
+        font-size: 18px;
+        text-decoration: none;
+        text-align: center;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+      }
+      figure {
+        width: 300px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        border-radius: 20px;
+        background: #fff;
+        overflow: hidden;
+      }
+      figure:hover + span {
+        bottom: -36px;
+        opacity: 1;
+      }
 
 
       .hover03 figure img {
@@ -261,7 +321,11 @@ figure:hover+span {
           transform: scale(0.4);
         }
         30% {
+
+         
+
           transform: scale(1.001);
+
         }
       }
       .column div {
@@ -270,7 +334,6 @@ figure:hover+span {
         position: relative;
         float: left;
         width: 400px;
-
         height: 400px;
         margin: 0 0 0 25px;
         padding: 0;
@@ -447,6 +510,11 @@ figure:hover+span {
 .socials .fa-linkedin-in:hover {
     color: rgb(18, 37, 160);
 }
+
+     
+
+  
+
     </style>
   </head>
   <body>
