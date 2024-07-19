@@ -5,6 +5,563 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Code-Collab</title>
+
+
+    <style>
+      body{
+        background-color: rgb(33, 39, 71);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "Noto Sans KR", sans-serif;
+        list-style: none;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        width: 1518px;
+        margin: auto;
+        height: 100px;
+        background-color: rgb(16, 2, 67);
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+      }
+
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+      nav .fa {
+        display: none;
+      }
+      .logo-container a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 10px;
+      }
+   
+      /* Sections */
+
+      .section1 {
+        margin: auto;
+        max-height: 100vh;
+        max-width: 1518px;
+        overflow-y: hidden;
+
+        padding-top: 100px;
+        background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+      }
+      .fixed-button-container {
+        position: fixed;
+        right: 30px;
+        top: 30rem;
+      }
+
+      .fixed-button-container a button {
+        border-radius: 50px;
+        background-color: #050228;
+        color: white;
+        height: 50px;
+        width: 50px;
+        font-size: 10px;
+        border-bottom: 2px solid rgb(188, 23, 23);
+        border-top: 2px solid rgb(17, 228, 77);
+      }
+      .fixed-button-container a button:hover {
+        border-bottom: 2px solid rgb(17, 228, 77);
+        border-top: 2px solid rgb(188, 23, 23);
+      }
+
+      /* Footer */
+
+      footer {
+        margin: auto;
+        background-color: rgb(16, 2, 67);
+        height: 100px;
+        padding: 150px;
+        display: flex;
+        width: 1518px;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+      }
+
+      .footer-logo-social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
+
+      .footer-logo-social a img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+      }
+
+      .footer-logo-social .socials i {
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        font-size: 50px;
+      }
+
+      .description-text {
+        color: white;
+        align-items: baseline;
+        display: flex;
+      }
+
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
+
+      .description-text p span {
+        color: red;
+      }
+
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite;
+      }
+
+      .socials .fa-instagram:hover {
+        color: rgb(168, 25, 127);
+      }
+      .socials .fa-x-twitter:hover {
+        color: rgb(57, 55, 57);
+      }
+      .socials .fa-linkedin-in:hover {
+        color: rgb(18, 37, 160);
+      }
+
+      /* Animations */
+
+      @keyframes beat {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.3);
+        }
+        60% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Media Queries */
+
+      @media (max-width: 700px) {
+        .text-box h1 {
+          font-size: 20px;
+        }
+        .nav-links ul li {
+          display: block;
+        }
+        .nav-links {
+          position: absolute;
+          background: #f44336;
+          height: 100vh;
+          width: 200px;
+          top: 0;
+          right: -200px;
+          text-align: left;
+          z-index: 2;
+          transition: 1s;
+        }
+        nav .fa {
+          display: block;
+          color: white;
+          margin: 10px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .nav-links ul {
+          padding: 20px;
+        }
+      }
+      /* section1 */
+      .glass-panel {
+  color: #fff;
+  margin:   70px auto;
+ 
+  text-align: center;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 600px;
+  border-radius: 15px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.glass-button {
+  display: inline-block;
+  padding: 24px 32px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Extra styles for demo */
+/* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
+
+
+.glass-panel {  
+  max-width: 600px;
+}
+
+.glass-button {
+  margin: 15px;
+  margin-top: 40px;
+}
+
+.glass-panel>h1,.glass-panel> h1 a {
+  min-height: 120px;
+  width: 90%;
+  max-width: 700px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+  font-size: 80px;
+  color: rgba(255,255,255,0.8);
+}
+.glass-panel>h3{
+  font-size: 30px;
+}
+
+.glass-panel>p {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  color: rgba(255,255,255,0.6);
+}
+       /* section1 */
+/* section2 */
+.section2{
+  width: 1518px;
+  margin: auto;
+}
+ .container2{
+ 
+  animation: co 2s ease-in-out;
+  animation-timeline: scroll();
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+ 
+ }
+ @keyframes co {
+        0%{
+            color: gray;
+            opacity: 0;
+            transform: scale(0.1);
+        }
+        40%{
+            opacity: 1;
+            transform: scale(1);
+            color: rgba(84, 80, 80, 0.079);
+        }
+   
+
+}
+ .container2>div:nth-of-type(1){
+  width: 38%;
+  height: 500px;
+ 
+ }
+ .container2>div:nth-of-type(1)>img{
+width: 100%;
+margin-top: 50px;
+height: 100%;
+
+ }
+ .container2>div:nth-of-type(2){
+  width: 50%;
+  padding: 20px;
+  height: 550px;
+
+  align-items: center;
+  text-align: center;
+ color: white;
+
+ 
+ }
+ .container2>div:nth-of-type(2)>p{
+  text-align: justify;
+  margin-top: 5px;
+ }
+ 
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --colorMain: #fbfbfb;
+  --brShadow: -6px 6px 15px rgba(0,0,0,0.5);
+  --tlShadow: 6px -6px 15px rgba(255,255,255,0.8);
+}
+.container2>div:nth-of-type(2) {
+  margin: 0;
+  
+  font-family: sans-serif;
+  height: auto;
+ 
+  align-items:center;
+}
+.right2>h5{
+font-size: 30px;
+
+margin-bottom: 30px;
+}
+.right2 >h1{
+  text-align: start;
+  margin-bottom: 0px;
+  color: var(--colorMain);
+  font-size: 45px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-shadow: var(--brShadow), 
+               var(--tlShadow);
+  position: relative;
+  
+  &::before, &::after {
+    position: absolute;
+    background: var(--colorMain);
+    
+    border-radius: 10%;
+    
+  }
+}
+  .event2{
+    display: flex;
+    width: 100%;
+  
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+  
+  .container2>div:nth-of-type(2)>button{
+    padding: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 50px;
+    border: none;
+    border-radius: 10px;
+  }
+  .event2>div>div>img{
+    width: 50px;
+  }
+  .event2>div>div{
+    align-items: center;
+    
+  }
+  .where{
+    margin-left: 10px;
+  }
+  .right2>button {
+  padding: 1.5em 5em;
+  background: rgb(16, 19, 35);
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(131, 129, 129, 0.7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+}
+.right2>button:hover {
+  transform: scale(1.1);
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+.right2>button:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+   
+
+ /* section2 */
+ /* section21 */
+ .section21{
+ 
+        margin: auto;
+        height: 400px;
+        max-width: 1518px;
+        overflow-y: hidden;
+        padding-top: 100px;
+        background-image: url(https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/11/counter-2.jpg);
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+      
+ }
+ .container21{
+ 
+   
+  margin: auto;
+  width: 90%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+ }
+ /* Rotate */
+ .container21>div {
+ 
+  
+	/* -webkit-transform: rotate(15deg) scale(1.4);
+	transform: rotate(15deg) scale(1.4);
+	-webkit-transition: .3s ease-in-out; */
+
+ 
+}
+/* @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0), rotate(15deg);
+    }
+
+    
+} */
+
+
+.container21>div:hover  {
+transition: 3s forwerds;
+	transform: rotate(13deg) scale(0.9);
+}
+ .container21>div{
+  position: relative;
+  animation: ker;
+  margin-top: -50px;
+  animation-timeline: scroll();
+  cursor: pointer;
+border: 1px solid red;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  align-items: center;
+  color: white;
+ 
+ }
+ @keyframes ker {
+  50%{
+transform: rotateX(180deg);
+  }
+  95% {
+    transform: scale(0.8);
+  }
+}
+ .container21>div>div>h1{
+  font-size: 50px;
+ }
+ .container21>div>div>p{
+  font-size: 30px;
+ }
+ .container21>div>img{
+  width: 100px;
+  height: 100px;
+ }
+ /* section21 */
+    </style>
+
   </head>
   <body>
     <header class="header" id="header">
@@ -22,9 +579,9 @@
           <i class="fa fa-times" onclick="hideMenu()"></i>
 
           <ul>
-            <li><a href="#">HOME</a></li>
+            <li><a href="./index.html">HOME</a></li>
             <li><a href="">ABOUT</a></li>
-            <li><a href="">COURSE</a></li>
+            <li><a href="./course.html">COURSE</a></li>
             <li><a href="">BLOG</a></li>
             <li><a href="./contact.html">CONTACT US</a></li>
           </ul>
@@ -61,8 +618,8 @@
         </div>
         <div class="right2">
           <h5>ABOUT EVENT</h5>
-          <h1>Welcome to Tech Conference</h1>
-          <h1>Meetup 2024</h1>
+          <h1>Welcome to Tech Conference Meetup 2024</h1>
+          <h1> </h1>
           <p>The annual Tech Innovators Conference brings together leading minds in technology for a three-day event. Attendees can explore the latest advancements in AI, cybersecurity, and software development through keynote speeches, workshops, and networking sessions. This conference is an excellent opportunity to learn from industry experts and discover emerging trends shaping the future of technology.</p>
           <div class="event2">
             <div>
@@ -88,9 +645,43 @@
           </div>
           <button>Join This Event</button>
         </div>
-        
+        </div>
         </section>
-       <div class="container">
+        <br><br><br><br><br>
+
+        <section class="section21">
+          <div class="container21">
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/megaphone.png" alt="">
+              <div>
+                <h1>54+</h1>
+                <p>Speakers</p>
+              </div>
+            </div>
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/goal.png" alt="">
+              <div>
+                <h1>70+</h1>
+                <p>workshops</p>
+              </div>
+            </div>
+            <div>
+             <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/movie-tickets.png" alt="">
+             <div>
+              <h1>100+</h1>
+              <p>Tickets</p>
+             </div>
+            </div>
+            <div>
+              <img src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/support.png" alt="">
+              <div>
+                <h1>100+</h1>
+                <p>Sponsors</p>
+              </div>
+            </div>
+          </div>
+        </section>
+       
     <section class="feedback-wrapper">
       <div class="feedback-section">
         <div class="feedback-container">
@@ -144,7 +735,6 @@
         </div>
       </div>
     </section>
-  </div>
 
     <footer>
       <div class="footer-logo-social">
