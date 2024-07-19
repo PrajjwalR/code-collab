@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/6d68a53abf.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url(./img/img3.jpg);
+            color: white;
+            -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+        }
+
+        .header {
+        position: sticky;
+        top: 0;
+        width: 1518px;
+        margin: auto;
+        height: 100px;
+        background-color: rgb(16, 2, 67);
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+      }
+
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 1500px;
+      }
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+      nav .fa {
+        display: none;
+      }
+      .logo-container a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 10px;
+      }
+   
+        .section1{
+          max-width: 1440px;
+          height: 350px;
+          margin: auto;
+          align-items: center;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+            background-image: url("https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/inner9.jpg");
+            -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+        }
+        .section1>div>div{
+            height: 10px;
+            width: 300px;
+            background-color: blue;
+        }
+        .section1>div>h1{
+            color: white;
+            font-size: 60px;
+        }
+        .section2{
+           
+            max-width: 1440px;
+        
+          margin: auto;
+          
+        }
+
+        .hover03 figure img {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover03 figure:hover img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.column{
+
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+figure {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    	height: 400px;
+	margin: 0;
+	padding: 0;
+    cursor: pointer;
+	background: #fff;
+  
+	overflow: hidden;
+}
+
+.column div div {
+	/* position: absolute; */
+	bottom: -20px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 300px;
+    height: 300px;
+    color: white;
+	margin: 0;
+	padding: 0;
+	
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+}
+@keyframes ker {
+    35%{
+        transform:rotateY(180deg);
+    }
+  95% {
+    transform: scale(1.001);
+  }
+}
+.column div {
+    animation: ker;
+  animation-timeline: scroll();
+	position: relative;
+	float: left;
+	width: 400px;
+   
+	height: 400px;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.column::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+figure:hover+div {
+	bottom: -36px;
+	opacity: 1;
+}
+/* section3 */
+.section3{
+           
+           max-width: 1440px;
+       
+         margin: auto;
+        
+       }
+       .section3>div:nth-of-type(1){
+        margin-top: 200px;
+       }
+       .section3>div:nth-of-type(2){
+        animation: co  forwards;
+        animation-timeline: Scroll();
+       }
+       .section3>div:nth-of-type(3){
+        animation: co  forwards;
+        animation-timeline: Scroll();
+       }
+       .box{
+        opacity: 1;
+        animation: co  forwards;
+        animation-timeline: Scroll();
+       margin-top: 20px;
+        width: 80%;
+        height: 300px;
+        display: flex;
+       justify-content: space-between;
+       
+        border: green;
+       }
+       .left{
+        align-items: center;
+        justify-content: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+        border: rgb(30, 222, 88);
+        background: linear-gradient(90deg, rgb(26, 11, 140) 0%, rgb(73, 54, 211) 50%, rgb(167, 54, 179) 100%);
+       }
+       .left>i{
+        font-size: 50px;
+       }
+       .left>h1{
+        font-size: 35px;
+       }
+       .right{
+        width: 60%;
+        height: 300px;
+        border: rgb(30, 222, 88);
+       }
+       .right>div>div{
+        height: 2px;
+        width: 80px;
+        background-color: red;
+       }
+       .right>div{
+        align-items: center;
+        display: flex;
+       }
+       .right>div>h1,.right>div>p{
+        margin-left: 20px;
+       }
+       .right>div>i{
+        color: red;
+       }
+       .right>p,.right>div>h1{
+        color: hsla(0, 0%, 100%, 0.855);
+opacity: 1;
+        /* animation: co linear forwards;
+        animation-timeline: Scroll(); */
+        text-align: justify;
+        
+       }
+       @keyframes co {
+        0%{
+            color: gray;
+            opacity: 0;
+            transform: scale(0.0);
+        }
+        50%{
+            opacity: 0;
+            transform: scaleX(0.5);
+            color: rgba(84, 80, 80, 0.079);
+        }
+   
+  75% {
+    opacity: 1;
+    transform: scaleX(1);
+   color: white;
+  }
+}
+/* section3 */
+
+
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav>
+          <div class="logo-container">
+            <a href="index.html"
+              ><img
+                src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                alt="Logo"
+              />
+              <span>Code Collab</span></a
+            >
+          </div>
+          <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+  
+            <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="">ABOUT</a></li>
+              <li><a href="./course.html">COURSE</a></li>
+              <li><a href="">BLOG</a></li>
+              <li><a href="">CONTACT US</a></li>
+            </ul>
+          </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+      </header>
+    <section class="section1">
+        <div>
+            <h1>Courses</h1>
+            <div></div>
+        </div>
+       
+    </section>
+    <section class="section2">
+        <div class="hover03 column">
+            <div>
+              <figure><img width="100%" height="100%" src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/1-2-500x500.jpg" /></figure>
+              <div>
+                <h1>Rihana  kery</h1>
+                <p>Expert in AI Generation</p>
+              </div>
+             
+            </div>
+            <div>
+              <figure><img  width="100%" height="100%" src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/3-500x500.jpg" /></figure>
+              
+              <div>
+                <h1>Angelo Markel</h1>
+                <p>Expert in Freelancing</p>
+              </div>
+            </div>
+            <div>
+              <figure><img  width="100%" height="100%" src="https://rstheme.com/products/wordpress/evenio/wp-content/uploads/2021/09/5-500x500.jpg" /></figure>
+              <div>
+                <h1>Michel Holding</h1>
+                <p>Expert in Programming</p>
+              </div>
+              
+            </div>
+          </div>
+    </section>
+    <section class="section3">
+        <div class="box">
+            <div class="left">
+                <i class="fa-regular fa-clock"></i>
+                <h1>10:00 - 12:00</h1>
+                <h3>Room#1</h3>
+            </div>
+            <div class="right">
+                <div>
+                    <div></div>
+                    <h1>How to Start Freelancing</h1>
+                </div>
+                <div>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p> 2022-11-15</p>
+                </div>
+                <p>To start freelancing, begin by identifying your skills and choosing a niche that aligns with your expertise. Create a professional portfolio to showcase your best work and set up profiles on freelancing platforms like Upwork, Fiverr, or LinkedIn. Network with potential clients, bid on projects, and continuously improve your skills to stand out in the competitive market. Consistency, professionalism, and delivering quality work are key to building a successful freelancing career.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="left">
+                <i class="fa-regular fa-clock"></i>
+                <h1>01:00 - 02:00</h1>
+                <h3>Room#2</h3>
+            </div>
+            <div class="right">
+                <div>
+                    <div></div>
+                    <h1>Design for Startups</h1>
+                </div>
+                <div>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p> 2022-11-15</p>
+                </div>
+                <p>Effective design for startups involves creating a strong brand identity through cohesive visuals and user-friendly interfaces. Prioritize simplicity and functionality to ensure an intuitive user experience. Use consistent branding across all platforms to build recognition and trust. Regularly gather user feedback to refine and improve your design.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="left">
+                <i class="fa-regular fa-clock"></i>
+                <h1>03:00 - 04:00</h1>
+                <h3>Room#3</h3>
+            </div>
+            <div class="right">
+                <div>
+                    <div></div>
+                    <h1>Finance For Freelancers</h1>
+                </div>
+                <div>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p> 2022-11-15</p>
+                </div>
+                <p>Managing finances as a freelancer involves tracking income and expenses meticulously, setting aside funds for taxes, and maintaining an emergency savings fund. Use accounting software to streamline invoicing and budgeting. Regularly review your financial health and plan for long-term goals, such as retirement savings and investments.</p>
+            </div>
+        </div>
+      
+    </section>
+    
+</body>
+</html>
