@@ -7,97 +7,113 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            font-family: "Noto Sans KR", sans-serif;
-            list-style: none;
-        }
+         .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: rgb(16, 2, 67);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+      }
 
-        .header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            margin: auto;
-            height: 100px;
-            background-color: rgb(16, 2, 67);
-            color: rgb(0, 0, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.1s ease, opacity 0.3s ease;
-            z-index: 1000;
-        }
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
 
-        nav {
-            display: flex;
-            padding: 2% 6%;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
 
-        nav img {
-            width: 75px;
-            height: 68px;
-            border-radius: 53px;
-        }
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-        .nav-links {
-            flex: 1;
-            text-align: right;
-        }
+        overflow: hidden;
+      }
 
-        .nav-links ul li {
-            list-style: none;
-            display: inline-block;
-            padding: 8px 12px;
-            position: relative;
-        }
+      .nav-links ul {
+        display: flex;
+        justify-content: flex-end;
+      }
 
-        .nav-links ul li a {
-            color: white;
-            text-decoration: none;
-        }
+      .nav-links ul li {
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+      }
 
-        .nav-links ul li::after {
-            content: "";
-            width: 0%;
-            height: 2px;
-            background: #ff0000;
-            display: block;
-            margin: auto;
-            transition: 0.5s;
-        }
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-        .nav-links ul li:hover::after {
-            width: 100%;
-        }
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
 
-        nav .fa {
-            display: none;
-        }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
 
-        .logo-container a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      nav .fa {
+        display: none;
+      }
 
-        .logo-container a span {
-            color: white;
-            margin-left: 10px;
-            font-size: 20px;
-            font-weight: 600;
-            border-bottom: 2px solid red;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            padding-bottom: 10px;
-        }
+      .logo-container a {
+        display: flex;
+        align-items: center;
+      }
 
-        .logo-container a span:hover {}
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-links .login {
+        width: 100px;
+        height: 35px;
+        margin-left: 35px;
+        background-color: green;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nav-links .login:hover {
+        background-color: rgb(39, 202, 39);
+        font-size: 17px;
+      }
+
+    
 
         .about-app-main {
             margin: auto;
@@ -187,70 +203,73 @@
 
         /* Footer */
 
-        footer {
-            margin: auto;
-            background-color: rgb(16, 2, 67);
-            height: 100px;
-            padding: 150px;
-            display: flex;
-            width: 1518px;
-            justify-content: center;
-            flex-flow: column;
-            align-items: center;
-        }
+       footer {
+        margin: auto;
+        background-color: rgb(16, 2, 67);
 
-        .footer-logo-social {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 80%;
-            margin: auto;
-        }
+        padding: 150px;
+        display: flex;
+        width: 1518px;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+      }
 
-        .footer-logo-social a img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50px;
-        }
+      .footer-logo-social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
 
-        .footer-logo-social .socials i {
-            color: rgb(255, 255, 255);
-            padding: 20px;
-            font-size: 50px;
-        }
+      .footer-logo-social a img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+      }
 
-        .description-text {
-            color: white;
-            align-items: baseline;
-            display: flex;
-        }
+      .footer-logo-social .socials i {
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        font-size: 50px;
+      }
 
-        .description-text p {
-            font-size: 15px;
-            padding: 10px 50px;
-        }
+      .description-text {
+        color: white;
+        align-items: baseline;
+        display: flex;
+      }
 
-        .description-text p span {
-            color: red;
-        }
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
 
-        .heart {
-            font-size: 50px;
-            color: red;
-            animation: beat 1s infinite;
-        }
+      .description-text p span {
+        color: red;
+      }
 
-        .socials .fa-instagram:hover {
-            color: rgb(168, 25, 127);
-        }
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite;
+      }
 
-        .socials .fa-x-twitter:hover {
-            color: rgb(57, 55, 57);
-        }
+      .socials .fa-instagram:hover {
+        color: rgb(168, 25, 127);
+      }
 
-        .socials .fa-linkedin-in:hover {
-            color: rgb(18, 37, 160);
-        }
+      .socials .fa-x-twitter:hover {
+        color: rgb(57, 55, 57);
+      }
+
+      .socials .fa-linkedin-in:hover {
+        color: rgb(18, 37, 160);
+      }
+       
+
+       
 
         /* Animations */
 
@@ -483,6 +502,12 @@
             navLinks.style.right = "-200px";
         }
     </script>
+     <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/52cf30c454.js" crossorigin="anonymous"></script>
 </body>
 
