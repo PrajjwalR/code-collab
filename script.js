@@ -11,7 +11,7 @@ document.addEventListener("scroll", function () {
   }
 });
 
-const navLinks = document.getElementById("navLinks");
+const navLinks = document.getElementsByClassName("nav-Links");
 
 function showMenu() {
   navLinks.style.right = "0";
