@@ -33,15 +33,10 @@ function updateTime() {
   timeElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Initial call to set the time immediately
 updateTime();
-
-// Update the time every second
 setInterval(updateTime, 1000);
 
 // Atul's script.js
-
-// script.js
 
 let scrollPosition = 0;
 let intervalId;
@@ -49,18 +44,7 @@ let intervalId;
 function updateOpacity() {
   const container = document.querySelector(".feedback-container");
   const items = container.querySelectorAll(".feedback-item");
-  
 }
-
-// function autoScroll() {
-//     const container = document.querySelector('.feedback-container');
-//     const itemWidth = container.querySelector('.feedback-item').clientWidth;
-//     const maxScroll = container.scrollWidth - container.clientWidth;
-
-//     scrollPosition = (scrollPosition + itemWidth) % (maxScroll + itemWidth);
-//     container.style.transform = `translateX(-${scrollPosition}px)`;
-//     updateOpacity();
-// }
 
 function autoScroll() {
   const container = document.querySelector(".feedback-container");
@@ -73,7 +57,6 @@ function autoScroll() {
   // Apply the scroll position
   container.style.transform = `translateX(-${scrollPosition}px)`;
 
- 
   updateOpacity();
 }
 
@@ -93,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       stopAutoScroll();
-      item.parentElement.style.transform = "scale(1.04)";
+      item.parentElement.style.transform = "scale(1.3)";
       item.parentElement.style.zIndex = "10";
     });
 
