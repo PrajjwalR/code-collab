@@ -4,9 +4,9 @@ document.addEventListener("scroll", function () {
   const header = document.getElementById("header");
   if (window.scrollY > 10) {
     header.style.backgroundColor = "black";
-    header.style.opacity = "0.3";
+    header.style.opacity = "0.4";
   } else {
-    header.style.backgroundColor = " rgb(16, 2, 67)";
+    header.style.backgroundColor = "#132043";
     header.style.opacity = "1";
   }
 });

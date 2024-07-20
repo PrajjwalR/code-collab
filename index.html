@@ -16,7 +16,7 @@
       }
       body {
         overflow-x: hidden;
-        background-color: rgb(33, 39, 71);
+        background-color: rgb(19, 32, 67);
         font-family: "Noto Sans KR", sans-serif;
       }
       .header {
@@ -25,7 +25,7 @@
         margin: auto;
         width: 1580px;
         height: 80px;
-        background-color: rgb(16, 2, 67);
+        background-color: rgb(19, 32, 67);
         color: white;
         display: flex;
         align-items: center;
@@ -39,7 +39,7 @@
         padding: 0% 6%;
         justify-content: space-between;
         align-items: center;
-        /* width: 100%; */
+         color: #FDF0F0;
         width: 1580px;
         margin: auto;
       }
@@ -55,14 +55,15 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        /* Ensure items are centered vertically */
+        
         overflow: hidden;
-        /* Prevent overflow */
+        
       }
 
       .nav-links ul {
         display: flex;
         justify-content: flex-end;
+        margin-top: 20px;
       }
 
       .nav-links ul li {
@@ -404,13 +405,14 @@
       }
 
       .right2 .about-event {
-        font-size: 30px;
-        background-color: #0575e6;
-        /* width: 100px; */
-        border-radius: 15px;
-        margin-bottom: 30px;
-        padding: 15px;
-        /* width: 200px; */
+         font-weight: 550;
+        font-size: 50px;
+        text-align: center;
+        color:rgb(233, 217, 254);
+        margin-bottom: 50px;
+        padding:5px;
+        text-shadow: 10px 10px 10px rgba(80, 80, 80, 0.5);
+        
       }
 
       .right2 h1 {
@@ -580,10 +582,10 @@
         font-weight: 550;
         font-size: 60px;
         text-align: center;
-        color:rgb(233, 217, 254);
+        color:#4e8be0;
         margin-bottom: 20px;
         padding:5px;
-        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        text-shadow: 4px 5px 4px rgba(148, 148, 148, 0.5);
 
       }
 
@@ -591,7 +593,7 @@
         font-weight: 500;
         margin-bottom: 20px;
         text-align: center;
-        color:rgb(78, 78, 163);
+        color:#F1B4BB;
         font-size: 40px;
         padding:0px 30px;
       }
@@ -601,6 +603,7 @@
         align-items: center;
         justify-content: space-evenly;
         flex-wrap: wrap;
+          color:#FDF0F0;
       }
 
       section#s4 .s4-container .s4-content .s4-time .s4-zone {
@@ -608,6 +611,7 @@
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
+        color:#FDF0F0;
       }
 section#s4 .s4-container .s4-content .s4-time .clock {
         background: hsl(227, 22%, 92%);
@@ -616,11 +620,13 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-align: center;
         margin-left: 40px;
-        background-color: rgb(233, 217, 254);
+        background-color: #FDF0F0;
+        /* color:#c0818e; */
       }
 
       section#s4 .s4-container .s4-content .s4-time .clock #time {
         font-size: 3em;
+        color:#1F4172;
       }
 
       section#s4 .s4-container .s4-content .s4-time .s4-timezone {
@@ -628,6 +634,7 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         gap: 10px;
         margin-left: 40px;
         flex-wrap: wrap;
+        color:#FDF0F0;
       }
 
       section#s4 .s4-container .s4-content .s4-time .s4-date {
@@ -636,6 +643,7 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         align-items: start;
         flex-wrap: wrap;
         margin-top: 20px;
+        color:#FDF0F0;
       }
 
       section#s4 .s4-container .s4-content .s4-time .s4-date div {
@@ -644,6 +652,7 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         color: rgb(123, 136, 189);
         border-radius: 10px;
         margin: 10px;
+        color:#FDF0F0;
       }
 
       section#s4
@@ -820,6 +829,7 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         opacity: 1;
         transform: scale(0.8);
         transform-origin: center;
+        
       }
 
       .feedback-item img {
@@ -828,6 +838,9 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 10px;
+      }
+      .feedback-item img:hover{
+box-shadow: 13px 10px 19px  #1F4172;
       }
 
       .scroll-btn {
@@ -876,6 +889,7 @@ section#s4 .s4-container .s4-content .s4-time .clock {
       .faq-container {
         max-width: 1000px;
         margin: 75px auto;
+       
       }
 
       .faq-box {
@@ -887,23 +901,23 @@ section#s4 .s4-container .s4-content .s4-time .clock {
 
       .faq-header {
         margin: 30px;
-
         font-weight: 700;
       }
 
       #faq {
         font-size: 45px;
-        color: white;
+         color: #FDF0F0;
       }
 
       .faq-item {
-        background-color: #fff;
+        /* background-color: #fff; */
         margin-bottom: 10px;
         border-radius: 5px;
         overflow: hidden;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         position: relative;
         transition: box-shadow 0.3s ease;
+        background-color: #FDF0F0;
       }
 
       .faq-item.active {
@@ -1234,9 +1248,7 @@ color: rgb(94, 94, 94);
 
           <p>
             The annual Tech Innovators Conference brings together leading minds
-            in technology for a three-day event. Attendees can explore the
-            latest advancements in AI, cybersecurity, and software development
-            through keynote speeches, workshops, and networking sessions. This
+            in technology for a three-day event. This
             conference is an excellent opportunity to learn from industry
             experts and discover emerging trends shaping the future of
             technology.
