@@ -93,7 +93,7 @@
    
         .section1{
           max-width: 1440px;
-          height: 350px;
+          height: 450px;
           margin: auto;
           align-items: center;
           text-align: center;
@@ -169,12 +169,16 @@ figure {
 	opacity: 0;
 }
 @keyframes ker {
-    35%{
-        transform:rotateY(180deg);
-    }
-  95% {
-    transform: scale(1.001);
-  }
+  0%{
+            
+         
+            transform: scale(0.4);
+        }
+        30%{
+         
+            transform: scale(1);
+         
+        }
 }
 .column div {
     animation: ker;
@@ -279,7 +283,7 @@ opacity: 1;
             opacity: 0;
             transform: scale(0.0);
         }
-        50%{
+        30%{
             opacity: 0;
             transform: scaleX(0.5);
             color: rgba(84, 80, 80, 0.079);
