@@ -7,6 +7,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "Noto Sans KR", sans-serif;
+        list-style: none;
+        overflow-x: hidden;
+      }
          .header {
         position: fixed;
         top: 0;
@@ -202,17 +211,19 @@
         }
 
         /* Footer */
-
-       footer {
+      /* footer */
+      /* footer */
+      footer {
         margin: auto;
         background-color: rgb(16, 2, 67);
-
-        padding: 150px;
+        padding: 70px;
         display: flex;
-        width: 1518px;
+        width: 1540px;
         justify-content: center;
         flex-flow: column;
         align-items: center;
+        height: 400px;
+        overflow-x: hidden;
       }
 
       .footer-logo-social {
@@ -239,8 +250,14 @@
         color: white;
         align-items: baseline;
         display: flex;
+        width: 1150px;
+        justify-content: space-evenly;
       }
 
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
       .description-text p {
         font-size: 15px;
         padding: 10px 50px;
@@ -359,6 +376,9 @@
                     <li><a href="./blog.html">BLOG</a></li>
                     <li><a href="./contact.html">CONTACT US</a></li>
                 </ul>
+                <a href="./loginpage.html">
+            <button class="login">LOGIN</button>
+          </a>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
