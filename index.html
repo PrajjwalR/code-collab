@@ -368,6 +368,7 @@
       .container2 > div:nth-of-type(2) > p {
         text-align: justify;
         margin-top: 5px;
+        padding: 20px;
       }
 
       *,
@@ -391,13 +392,17 @@
         align-items: center;
       }
 
-      .right2 > h5 {
+      .right2 .about-event {
         font-size: 30px;
-
+        background-color: #0575e6;
+        /* width: 100px; */
+        border-radius: 15px;
         margin-bottom: 30px;
+        padding: 15px;
+        /* width: 200px; */
       }
 
-      .right2 > h1 {
+      .right2 h1 {
         text-align: start;
         margin-bottom: 0px;
         color: var(--colorMain);
@@ -427,7 +432,7 @@
 
       .container2 > div:nth-of-type(2) > button {
         padding: 20px;
-        margin-top: 10px;
+        margin-top: 40px;
         font-weight: bold;
         margin-left: 50px;
         border: none;
@@ -435,7 +440,7 @@
       }
 
       .event2 > div > div > img {
-        width: 50px;
+        width: 40px;
       }
 
       .event2 > div > div {
@@ -444,6 +449,8 @@
 
       .where {
         margin-left: 10px;
+        font-size: 30px;
+        padding: 10px;
       }
 
       .right2 > button {
@@ -748,7 +755,7 @@
 
       .container {
         max-width: 1400px;
-        border: 1px solid red;
+
         margin: 0 auto;
         padding: 0 20px;
         overflow: hidden;
@@ -876,6 +883,7 @@
 
       #faq {
         font-size: 45px;
+        color: white;
       }
 
       .faq-item {
@@ -929,131 +937,97 @@
       }
 
       /* footer */
+ 
 
-      footer {
-        margin: auto;
-        margin: auto;
-        background-color: rgb(16, 2, 67);
-        padding: 70px;
-        display: flex;
-        width: 1540px;
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
-        height: 400px;
-        overflow-x: hidden;
-      }
+footer {
+  width: 100%;
+  background-color: black;
+  height: 22rem;
+  padding: 70px;
+  display: flex;
+}
+.pages {
+  margin-left: 2rem;
+}
+.common-footer {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 14px;
+}
+.common-footer a {
+  color: rgb(82, 94, 122);
+  padding: 5px;
+  text-decoration: none;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.category {
+  margin-left: 6rem;
+}
+.resources {
+  margin-left: 6rem;
+}
 
-      .footer-logo-social {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 80%;
-        margin: auto;
-      }
+.footer-with-main-logo {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 100px;
+  height: 5rem;
+}
 
-      .footer-logo-social a img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50px;
-      }
+.footer-border-bottom {
+  width: 100%;
+  background-color: rgb(130, 130, 130);
+  height: 1px;
+}
+.license-text {
+  color: rgb(70, 80, 106);
+  padding-right: 100px;
+  font-size: 15px;
+}
+.socials {
+  width: 50rem;
+  display: flex;
+  justify-content: start;
+  flex-flow: column;
+  align-items: end;
+}
 
-      .footer-logo-social .socials i {
-        color: rgb(255, 255, 255);
-        padding: 20px;
-        font-size: 50px;
-      }
+.socials .icons {
+  display: flex;
+  color: white;
+  /* justify-content: flex-end; */
+}
+.socials .icons i {
+  padding: 20px;
+  font-size: 30px;
+}
+.info {
+  color: rgb(82, 94, 122);
+}
+.advertise {
+  width: 350px;
+  height: 50px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+.advertise:hover {
+  transform: scale(1.02);
+  background-color: wheat;
+}
 
-      .description-text {
-        color: white;
-        align-items: baseline;
-        display: flex;
-        width: 1150px;
-        justify-content: space-evenly;
-      }
 
-      .description-text p {
-        font-size: 15px;
-        padding: 10px 50px;
-      }
-
-      .description-text p span {
-        color: red;
-      }
-
-      .heart {
-        font-size: 50px;
-        color: red;
-        animation: beat 1s infinite;
-      }
-
-      .socials .fa-instagram:hover {
-        color: rgb(168, 25, 127);
-      }
-
-      .socials .fa-x-twitter:hover {
-        color: rgb(57, 55, 57);
-      }
-
-      .socials .fa-linkedin-in:hover {
-        color: rgb(18, 37, 160);
-      }
-
-      /* Animations */
-
-      @keyframes beat {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: scale(1);
-        }
-
-        40% {
-          transform: scale(1.3);
-        }
-
-        60% {
-          transform: scale(1.1);
-        }
-      }
-
-      /* Media Queries */
-
-      @media (max-width: 700px) {
-        .text-box h1 {
-          font-size: 20px;
-        }
-
-        .nav-links ul li {
-          display: block;
-        }
-
-        .nav-links {
-          position: absolute;
-          background: #f44336;
-          height: 100vh;
-          width: 200px;
-          top: 0;
-          right: -200px;
-          text-align: left;
-          z-index: 2;
-          transition: 1s;
-        }
-
-        nav .fa {
-          display: block;
-          color: white;
-          margin: 10px;
-          font-size: 20px;
-          cursor: pointer;
-        }
-
-        .nav-links ul {
-          padding: 20px;
-        }
-      }
     </style>
   </head>
   <body>
@@ -1111,9 +1085,11 @@
           />
         </div>
         <div class="right2">
-          <h5>ABOUT EVENT</h5>
-          <h1>Welcome to Tech Conference Meetup 2024</h1>
-          <h1></h1>
+          <h5 class="about-event">ABOUT EVENT</h5>
+
+          <h1 style="text-align: center">Welcome to Tech</h1>
+          <h1>Conference Meetup 2024</h1>
+
           <p>
             The annual Tech Innovators Conference brings together leading minds
             in technology for a three-day event. Attendees can explore the
@@ -1626,26 +1602,66 @@
     <!-- ----------------------------Atul's sec 5 and 6 ends ------------------------------- -->
 
     <footer>
-      <div class="footer-logo-social">
-        <a href="index.html"
-          ><img
-            src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-            alt="Footer Logo"
-        /></a>
+        <div class="pages common-footer">
+          <h3>Pages</h3>
+          <a href="">About us</a>
+          <a href="">News</a>
+          <a href="">Authors</a>
+          <a href="">Newsletters Plans</a>
+          <a href="">Contact us</a>
+          <a href="">Sign up</a>
+        </div>
+        <div class="category common-footer">
+          <h3>Category</h3>
+          <a href="">Health</a>
+          <a href="">Politics</a>
+          <a href="">Sports</a>
+          <a href="">World News</a>
+          <a href="">Business</a>
+          <a href="">Technology</a>
+        </div>
+        <div class="resources common-footer">
+          <h3>Resources</h3>
+          <a href="">Privacy Policy</a>
+          <a href="">Advertise</a>
+          <a href="">Terms & Conditions</a>
+          <a href="">License</a>
+          <a href="">Style Guide</a>
+        </div>
         <div class="socials">
-          <a href="#"><i class="fa-brands fa-instagram"></i> </a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <div class="icons">
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-rss"></i>
+          </div>
+          <div class="info">code-collab@example.com</div>
+          <div class="advertise">
+            <p>Make a web-confrence with us</p>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-border-bottom"></div>
+      <div class="footer-with-main-logo">
+         <div class="logo-container" >
+          <a href="index.html"
+            ><img
+              src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+              alt="Logo"
+              width="70px"
+              height="70px"
+              style="border-radius: 50px;"
+            />
+            <span>Code Collab</span></a
+          >
+        </div>
+        <div class="license-text">
+          © 2024 Code-Collab. Designed by freedom-developers-005. Powered by Masai.
         </div>
       </div>
-      <div class="description-text">
-        <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
-        <p>
-          Made with <span class="heart">&#10084;</span> in Masai School by
-          Freedom_Developers_005
-        </p>
-      </div>
-    </footer>
+    </div>
 
     <script
       src="https://kit.fontawesome.com/52cf30c454.js"
