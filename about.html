@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans KR", sans-serif;
+        overflow-x: hidden;
+      }
+         .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: rgb(16, 2, 67);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+      }
+
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        overflow: hidden;
+      }
+
+      .nav-links ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .nav-links ul li {
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+
+      nav .fa {
+        display: none;
+      }
+
+      .logo-container a {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-links .login {
+        width: 100px;
+        height: 35px;
+        margin-left: 35px;
+        background-color: green;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nav-links .login:hover {
+        background-color: rgb(39, 202, 39);
+        font-size: 17px;
+      }
+
+    
+
+        .about-app-main {
+            margin: auto;
+            max-width: 1518px;
+            padding-top: 100px;
+        }
+
+        .about-header {
+            text-align: center;
+            padding: 20px 0;
+            /* margin: -20px 70px 50px 5px; */
+        }
+
+        .about-ourvalues {
+            font-size: 38px;
+            color: #555;
+            margin: 20px 500px 10px 500px;
+        }
+
+        .about-ourvalues-header {
+            font-size: 60px;
+            margin: 10px 170px 100px 170px;
+        }
+
+        .about-values-container {
+            display: grid;
+            grid-template-areas: "a1 a2"
+                "a3 a4";
+        }
+
+        .about-header-para {
+            margin: -50px 100px 10px 5px;
+        }
+
+        .about-top-para {
+            margin: 0px 200px 150px 5px;
+        }
+
+        /* .value-imgtext-container {
+            display: grid;
+            grid-template-areas: "a1 a2"
+                                 "a3 a4";
+        } */
+        .about-values-container>div:nth-of-type(1) {
+            grid-area: a1;
+
+        }
+
+        .about-values-container>div:nth-of-type(2) {
+            grid-area: a2;
+            margin-top: 220px;
+        }
+
+        .about-values-container>div:nth-of-type(3) {
+            grid-area: a3;
+            margin-top: -20px;
+        }
+
+        .about-values-container>div:nth-of-type(4) {
+            grid-area: a4;
+            margin-top: 220px;
+        }
+
+        .about-values-container div {
+            padding: 5px;
+        }
+
+        .value-imgtext-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-container-heading {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+
+
+
+        .text {
+            font-size: 25px;
+            color: #333;
+            text-align: center;
+            margin: 20px 80px;
+        }
+
+        /* Footer */
+      /* footer */
+      /* footer */
+      footer {
+        margin: auto;
+        background-color: rgb(16, 2, 67);
+        padding: 70px;
+        display: flex;
+        width: 1540px;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        height: 400px;
+        overflow-x: hidden;
+      }
+
+      .footer-logo-social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+      }
+
+      .footer-logo-social a img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+      }
+
+      .footer-logo-social .socials i {
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        font-size: 50px;
+      }
+
+      .description-text {
+        color: white;
+        align-items: baseline;
+        display: flex;
+        width: 1150px;
+        justify-content: space-evenly;
+      }
+
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
+      .description-text p {
+        font-size: 15px;
+        padding: 10px 50px;
+      }
+
+      .description-text p span {
+        color: red;
+      }
+
+      .heart {
+        font-size: 50px;
+        color: red;
+        animation: beat 1s infinite;
+      }
+
+      .socials .fa-instagram:hover {
+        color: rgb(168, 25, 127);
+      }
+
+      .socials .fa-x-twitter:hover {
+        color: rgb(57, 55, 57);
+      }
+
+      .socials .fa-linkedin-in:hover {
+        color: rgb(18, 37, 160);
+      }
+       
+
+       
+
+        /* Animations */
+
+        @keyframes beat {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(1.3);
+            }
+
+            60% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+
+            .nav-links ul li {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 2;
+                transition: 1s;
+            }
+
+            nav .fa {
+                display: block;
+                color: white;
+                margin: 10px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .nav-links ul {
+                padding: 20px;
+            }
+
+            .about-values-container {
+                flex-direction: grid;
+                grid-template-columns: repeat(2, 1fr);
+                border: 1px solid red;
+            }
+
+            .value-imgtext-container {
+                max-width: 100%;
+                border: 1px solid red;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgba(214, 189, 152, 1);">
+    <header class="header" id="header">
+        <nav>
+            <div class="logo-container">
+                <a href="index.html"><img
+                        src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                        alt="Logo" />
+                    <span>Code Collab</span></a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="./course.html">COURSE</a></li>
+                    <li><a href="./blog.html">BLOG</a></li>
+                    <li><a href="./contact.html">CONTACT US</a></li>
+                </ul>
+                <a href="./loginpage.html">
+            <button class="login">LOGIN</button>
+          </a>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+    <main class="about-app-main">
+        <section class="about-section-container">
+            <div class="about-container">
+                <div class="about-header">
+                    <div class="about-header">
+
+                        <div class="about-header-para">
+                            <h1 style="text-align: start;font-size: 100px; font-weight: 200;">From Croatian shores to
+                                global frontiers</h1>
+                            <br><br><br>
+                            <div class="about-top-para">
+                                <p
+                                    style="text-align: start; font-size: 30px; color: rgb(89, 96, 110); font-weight: 50;">
+                                    We’re an agency founded on the belief that
+                                    challenging core assumptions unlocks transformative solutions. From our
+                                    humble beginnings on Island Krk to a global team spanning multiple nationalities, we
+                                    defy expectations, guided by
+                                    focus
+                                    and determination to do our best work.</p>
+                                <br><br>
+                                <p
+                                    style="text-align: start; font-size: 30px; color: rgb(104, 109, 118); font-weight: 50;">
+                                    We believe in learning through doing,
+                                    embracing the road less traveled, and continually striving to improve. Open
+                                    communication and mindful listening guide our approach, ensuring we understand,
+                                    adapt, and push forward in
+                                    everything we
+                                    do.</p>
+                            </div>
+                        </div>
+                        <p class="about-ourvalues">Our Values</p>
+                        <h2 style="color: rgb(19, 75, 112); font-weight: 500;" class="about-ourvalues-header">Through
+                            the years, we have been shaped and formed by both
+                            successes and failures.</h2>
+
+                        <div class="about-values-container">
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_1Challenge-Black.gif"
+                                    alt="1st">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px; font-weight: 150;"
+                                    class="text-container-heading">Challenge Core Assumptions</h2>
+                                <p class="text">At the heart of our journey lies this singular idea. We believe that by
+                                    bravely
+                                    questioning our own and our clients’ assumptions about their brand, website, and
+                                    product, we
+                                    can uncover new solutions and ideas. While some might assume we could not run a
+                                    thriving
+                                    digital agency from a Croatian Island, we continue to challenge this particular
+                                    assumption
+                                    every single day.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_2Learning-Black.gif"
+                                    alt="2nd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Learning Through Doing</h2>
+                                <p class="text">We approach every problem with an open mind, and sometimes finding the
+                                    best
+                                    solutions means taking the road less traveled. Embracing experimentation, venturing
+                                    into the
+                                    unknown, or even stumbling occasionally is all part of the process. Because every
+                                    step, even
+                                    the missteps, deepens our understanding and hones our craft. Learning by doing—it’s
+                                    how we
+                                    grow.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_3Focus-Pure-Black.gif"
+                                    alt="3rd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Focus and Determination</h2>
+                                <p class="text">When we say yes to a project, it’s because we truly believe in it. Our
+                                    commitment means giving it our all, every time.
+                                    If there’s a way to improve, streamline or make something better, we’ll pursue it,
+                                    even if it means stepping out of our
+                                    comfort zone. For us it’s not about meeting expectations, it’s about our
+                                    determination to create something that truly
+                                    resonates with people.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_4ListenB-Black.gif"
+                                    alt="2nd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Listen Smart</h2>
+                                <p class="text">We take an open-door approach to communication, with both our clients
+                                    and each other. Every voice is important, and
+                                    we’re never too busy to listen. To us, listening smart goes beyond just hearing
+                                    words—it means understanding without
+                                    barriers of ego, being mindful to perspectives and insights, and always being open
+                                    to change and growth.</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-logo-social">
+            <a href="index.html"><img
+                    src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                    alt="Footer Logo" /></a>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i> </a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i> </a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="description-text">
+            <p>© 2024 | Terms & conditions | Privacy & Cookies Policy</p>
+            <p>
+                Made with <span class="heart">&#10084;</span> in Masai School by
+                Freedom_Developers_005
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 10) {
+                header.style.backgroundColor = "black";
+                header.style.opacity = "0.3";
+            } else {
+                header.style.backgroundColor = " rgb(16, 2, 67)";
+                header.style.opacity = "1";
+            }
+        });
+
+        const navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+     <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/52cf30c454.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
