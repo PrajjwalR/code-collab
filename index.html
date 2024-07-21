@@ -11,6 +11,14 @@
         margin: 0;
         padding: 0;
       }
+      a{
+        text-decoration: none;
+      }
+      a:hover{
+         text-decoration: none;
+         color: white;
+      }
+      
       body {
        
         background-color: rgb(19, 32, 67);
@@ -24,9 +32,10 @@
       position: sticky;
         top: 0;
         margin: auto;
+         max-width: 1580px;
        
-        /* border: 1px solid red; */
-        max-width: 1580px;
+        
+       
         height: 80px;
         background-color: rgb(19, 32, 67);
         color: white;
@@ -159,7 +168,12 @@
             transform: rotate(45deg) translate(-5px, -5px);
         }
 
-
+@media (max-width: 950px){
+  .nav-links ul li a{
+    font-size: 10px;
+    /* padding: 5px; */
+  }
+}
 @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -191,8 +205,11 @@
 
         @media (max-width: 480px) {
             nav {
-                flex-direction: column;
+                /* flex-direction: column; */
             }
+            /* .code-collab{
+              display: none;
+            } */
 
             .nav-links ul {
                 flex-direction: column;
@@ -216,8 +233,7 @@
         margin: auto;
         
         height: 700px;
-        max-width: 1518px;
-        
+        max-width: 1580px;
        margin-top:-100px;
         padding-top: 100px;
         background-image: url(https://canvas-assets-production.imgix.net/audience-1-1684419611ylB3Q.png?fit=crop&auto=format&q=70&ixlib=react-9.2.0&w=1446&h=722&dpr=1.25);
@@ -433,8 +449,9 @@
         padding: 10px;
       }
 
-      .right2 > button {
-        padding: 1.5em 5em;
+      .right2 > a button {
+        padding: 1em 2em;
+        margin-top: 10px;
         background: rgb(16, 19, 35);
         border: none;
         border-radius: 0.5rem;
@@ -452,14 +469,14 @@
           6px 6px 10px rgba(0, 0, 0, 0.15);
       }
 
-      .right2 > button:hover {
+      .right2 > a button:hover {
         transform: scale(1.1);
         box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
           -2px -2px 4px rgba(255, 255, 255, 0.4),
           2px 2px 2px rgba(255, 255, 255, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
       }
 
-      .right2 > button:active {
+      .right2 > a button:active {
         box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
           inset -2px -2px 4px rgba(255, 255, 255, 0.5),
           inset 2px 2px 2px rgba(255, 255, 255, 0.075),
@@ -674,8 +691,9 @@ section#s4 .s4-container .s4-content .s4-time .clock {
         background-color: rgb(233, 217, 255);
         margin: 50px;
         transition: transform 0.3s ease-in-out, box-shadow 0.1s ease-in-out;
-        height: 650px;
-        width: 550px;
+        height: auto;
+        
+        max-width: 650px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
           rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
           rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -930,7 +948,8 @@ box-shadow: 13px 10px 19px  #1F4172;
       /* footer */
 
       .footer-container-p {
-      width: 100%;
+       margin: auto;
+         max-width: 1580px;
     }
 
     footer {
@@ -986,6 +1005,8 @@ box-shadow: 13px 10px 19px  #1F4172;
       text-align: center;
       flex: 1;
       margin-top: 10px;
+      text-align: end;
+      
     }
 
     .socials {
@@ -1338,7 +1359,7 @@ margin-top: 100px;
         <div class="logo-container">
             <a href="index.html">
                 <img src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg" alt="Logo"/>
-                <span>Code Collab</span>
+                <span class="code-collab">Code Collab</span>
             </a>
         </div>
         <div class="nav-links" id="navLinks">
@@ -1536,7 +1557,7 @@ margin-top: 100px;
               <p>10:00-17:00</p>
             </div>
           </div>
-          <button>Join This Event</button>
+          <a href="./register.html"><button >Join This Event</button></a>
         </div>
       </div>
     </section>

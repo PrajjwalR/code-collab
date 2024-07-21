@@ -10,6 +10,9 @@
         margin: 0;
         padding: 0;
       }
+      a{
+        text-decoration: none;
+      }
       body {
        
         background-color: #F1B4BB;
@@ -156,7 +159,12 @@
             transform: rotate(45deg) translate(-5px, -5px);
         }
 
-
+@media (max-width: 950px){
+  .nav-links ul li a{
+    font-size: 10px;
+    
+  }
+}
 @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -188,7 +196,7 @@
 
         @media (max-width: 480px) {
             nav {
-                flex-direction: column;
+                /* flex-direction: column; */
             }
 
             .nav-links ul {
@@ -210,7 +218,8 @@
 /* Footer */
 
       .footer-container-p {
-      width: 100%;
+    margin: auto;
+         max-width: 1580px;
     }
 
     footer {
@@ -266,6 +275,7 @@
       text-align: center;
       flex: 1;
       margin-top: 10px;
+      text-align: end;
     }
 
     .socials {

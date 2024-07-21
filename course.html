@@ -19,7 +19,9 @@
          margin: auto;
       }
 
-      
+      a{
+        text-decoration: none;
+      }
      
       .hide{
         display: none;
@@ -163,6 +165,12 @@
             transform: rotate(45deg) translate(-5px, -5px);
         }
 
+@media (max-width: 950px){
+  .nav-links ul li a{
+    font-size: 10px;
+    
+  }
+}
 
 @media (max-width: 768px) {
             .nav-links {
@@ -195,7 +203,7 @@
 
         @media (max-width: 480px) {
             nav {
-                flex-direction: column;
+                /* flex-direction: column; */
             }
 
             .nav-links ul {
@@ -215,7 +223,7 @@
         }
         
       .section1 {
-        max-width: 1540px;
+        max-width: 1580px;
         height: 350px;
         margin: auto;
         align-items: center;
@@ -242,7 +250,7 @@
 
         margin: auto;
       }
-      .column {
+     .column {
         margin: 15px 15px 0;
         padding: 0;
       }
@@ -333,8 +341,8 @@
         opacity: 0;
       }
       figure {
-        width: 300px;
-        height: 200px;
+        width: 400px;
+        height: 250px;
         margin: 0;
         padding: 0;
         border-radius: 20px;
@@ -376,7 +384,7 @@
       }
 
       .column div div {
-        /* position: absolute; */
+        
         bottom: -20px;
         left: 0;
         z-index: -1;
@@ -521,8 +529,8 @@
      /* Footer */
 
       .footer-container-p {
-      width: 100%;
-    }
+ margin: auto;
+         max-width: 1580px;    }
 
     footer {
       background-color: black;
@@ -557,7 +565,8 @@
 
     .footer-with-main-logo {
       background-color: black;
-      width: 100%;
+       margin: auto;
+         max-width: 1580px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -577,6 +586,7 @@
       text-align: center;
       flex: 1;
       margin-top: 10px;
+      text-align: end;
     }
 
     .socials {
@@ -710,6 +720,120 @@
         padding: 8px;
       }
     }
+
+    /* media query */
+      @media (width <= 1050px){
+        .column {
+        margin-top: 80px;
+        align-items: center;
+        display: flex;
+      flex-wrap: wrap;
+     
+      
+        justify-content: center;
+      }
+      .column>div:nth-of-type(3){
+        margin-top: 100px;
+      }
+      figure {
+        width: 400px;
+        height: 350px;
+        
+        border-radius: 10px;
+        background: #fff;
+        overflow: hidden;
+      }
+     
+
+      }
+      @media (width <= 750px){
+        figure {
+        width: 360px;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        border-radius: 20px;
+        background: #fff;
+        overflow: hidden;
+      }
+      
+      .column {
+        margin-top: 50px;
+        align-items: center;
+        display: flex;
+      
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .box {
+        margin: auto;
+        opacity: 1;
+        animation: co forwards;
+        animation-timeline: Scroll();
+       
+        width: 80%;
+        height: auto;
+        display: block;
+        justify-content: space-between;
+
+        
+      }
+      .section3 > div:nth-of-type(1) {
+        margin-top: -10px;
+      }
+      .left {
+        align-items: center;
+        justify-content: center;
+        color: white;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        width: 100%;
+        height: 300px;
+       
+        background: linear-gradient(
+          90deg,
+          rgb(26, 11, 140) 0%,
+          rgb(73, 54, 211) 50%,
+          rgb(167, 54, 179) 100%
+        );
+      }
+      .right {
+        width: 100%;
+        margin: auto;
+        height: 300px;
+       
+      }
+      }
+      @media (width <= 450px){
+        .column {
+        margin-top: 30px;
+        align-items: center;
+        display: flex;
+   justify-content: center;
+      flex-wrap: wrap;
+     
+      
+        justify-content: center;
+      }
+      .right{
+        height: auto;
+      }
+      .column>div:nth-of-type(3){
+        margin-top: 50px;
+      }
+     
+      figure {
+        width: 300px;
+        height: 250px;
+        
+        border-radius: 10px;
+        background: #fff;
+        overflow: hidden;
+      }
+     
+
+      }
 
     </style>
   </head>
