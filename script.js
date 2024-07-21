@@ -1,25 +1,3 @@
-// Prajjwal's script
-
-document.addEventListener("scroll", function () {
-  const header = document.getElementById("header");
-  if (window.scrollY > 10) {
-    header.style.backgroundColor = "black";
-    header.style.opacity = "0.4";
-  } else {
-    header.style.backgroundColor = "#132043";
-    header.style.opacity = "1";
-  }
-});
-
-const navLinks = document.getElementsByClassName("nav-Links");
-
-function showMenu() {
-  navLinks.style.right = "0";
-}
-function hideMenu() {
-  navLinks.style.right = "-200px";
-}
-
 // Appu
 
 function updateTime() {
@@ -51,10 +29,8 @@ function autoScroll() {
   const itemWidth = container.querySelector(".feedback-item").clientWidth;
   const maxScroll = container.scrollWidth - container.clientWidth;
 
-  // Calculate the next scroll position
   scrollPosition = (scrollPosition + itemWidth) % (maxScroll + itemWidth);
 
-  // Apply the scroll position
   container.style.transform = `translateX(-${scrollPosition}px)`;
 
   updateOpacity();

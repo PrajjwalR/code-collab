@@ -6,7 +6,7 @@
     <title>Code-Collab</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-      ** {
+      * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -65,7 +65,7 @@
       .nav-links ul {
         display: flex;
         justify-content: flex-end;
-        margin-top: 20px;
+        margin-top: 17px;
       }
 
       .nav-links ul li {
@@ -928,123 +928,200 @@ box-shadow: 13px 10px 19px  #1F4172;
         text-align: center;
       }
       /* footer */
- 
-      .footer-container-p{
-        width: 100%;
+
+      .footer-container-p {
+      width: 100%;
+    }
+
+    footer {
+      background-color: black;
+      height: auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .pages, .category, .resources {
+      margin: 10px 0;
+    }
+
+    .common-footer {
+      color: white;
+      flex-direction: column;
+      font-weight: 300;
+      font-size: 14px;
+      margin: 10px;
+      display: flex;
+    }
+
+    .common-footer a {
+      color: rgb(82, 94, 122);
+      padding: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .footer-with-main-logo {
+      background-color: black;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-border-bottom {
+      width: 100%;
+      background-color: rgb(130, 130, 130);
+      height: 1px;
+    }
+
+    .license-text {
+      color: rgb(70, 80, 106);
+      font-size: 15px;
+      text-align: center;
+      flex: 1;
+      margin-top: 10px;
+    }
+
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .socials .icons {
+      display: flex;
+      color: white;
+      padding: 20px;
+    }
+
+    .socials .icons i {
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .socials .icons .fa-x-twitter:hover {
+      color: rgb(45, 45, 73);
+    }
+
+    .socials .icons .fa-instagram:hover {
+      color: rgb(231, 19, 142);
+    }
+
+    .socials .icons .fa-youtube:hover {
+      color: rgb(211, 0, 0);
+    }
+
+    .socials .icons .fa-facebook:hover {
+      color: rgb(0, 0, 238);
+    }
+
+    .socials .icons .fa-github:hover {
+      color: rgb(94, 94, 94);
+    }
+
+    .info {
+      color: rgb(82, 94, 122);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .advertise a {
+      width: 15em;
+      max-width: 350px;
+      height: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      justify-content: space-between;
+      color: black;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .advertise a:hover {
+      transform: scale(1.02);
+      background-color: wheat;
+      text-decoration: none;
+      color: black;
+    }
+    .advertise a p{
+      margin: 0;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
       }
 
-footer {
-  /* width: 100%; */
-  background-color: black;
-  height: 22rem;
-  padding: 70px;
-  display: flex;
-}
-.pages {
-  margin-left: 2rem;
-}
-.common-footer {
-  display: flex;
-  color: white;
-  flex-direction: column;
-  font-weight: 300;
-  font-size: 14px;
-}
-.common-footer a {
-  color: rgb(82, 94, 122);
-  padding: 5px;
-  text-decoration: none;
-  margin-top: 5px;
-  font-size: 15px;
-  font-weight: 300;
-}
-.category {
-  margin-left: 6rem;
-}
-.resources {
-  margin-left: 6rem;
-}
+      .common-footer {
+        margin: 10px 0;
+      }
 
-.footer-with-main-logo {
-  background-color: black;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 100px;
-  height: 5rem;
-}
+      .footer-with-main-logo {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
 
-.footer-border-bottom {
-  width: 100%;
-  background-color: rgb(130, 130, 130);
-  height: 1px;
-}
-.license-text {
-  color: rgb(70, 80, 106);
-  padding-right: 100px;
-  font-size: 15px;
-}
-.socials {
-  width: 50rem;
-  display: flex;
-  justify-content: start;
-  flex-flow: column;
-  align-items: end;
-}
+      .license-text {
+        text-align: center;
+        margin-top: 10px;
+      }
 
-.socials .icons {
-  display: flex;
-  color: white;
-  /* justify-content: flex-end; */
-}
-.socials .icons i {
-  padding: 20px;
-  font-size: 30px;
-}
+      .socials {
+        margin-top: 20px;
+      }
 
-.socials .icons .fa-x-twitter:hover{
-color: rgb(45, 45, 73);
-}
-.socials .icons .fa-instagram:hover{
-color: rgb(231, 19, 142);
-}
-.socials .icons .fa-youtube:hover{
-color: rgb(211, 0, 0);
-}
-.socials .icons .fa-facebook:hover{
-color: rgb(0, 0, 238);
-}
-.socials .icons .fa-github:hover{
-color: rgb(94, 94, 94);
-}
+      .advertise a {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+      }
+    }
 
+    @media (max-width: 480px) {
+      footer {
+        padding: 20px;
+      }
 
-.info {
-  color: rgb(82, 94, 122);
-}
+      .footer-with-main-logo {
+        padding: 10px;
+      }
 
-.advertise a{
-  width: 350px;
-  height: 50px;
-  background-color: white;
-  margin-top: 20px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  text-decoration: none;
-  justify-content: space-between;
-  color: black;
-  
-}
-.advertise a:hover {
-  transform: scale(1.02);
-  background-color: wheat;
-  text-decoration: none;
-  color: black;
-}
+      .license-text {
+        font-size: 13px;
+      }
 
+      .socials .icons i {
+        font-size: 20px;
+        padding: 8px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 250px;
+        padding: 8px;
+      }
+    }
+
+ 
+     
 /* Media Queries */
 
 @media (width <= 950px){
@@ -1074,11 +1151,7 @@ margin-top: 100px;
         color: white;
         margin-bottom: 100px;
       }
-      footer {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-      }
+      
       }
 
      
@@ -1258,35 +1331,7 @@ margin-top: 100px;
     </style>
   </head>
   <body>
-    <!-- <header class="header" id="header">
-      <nav>
-        <div class="logo-container">
-          <a href="index.html"
-            ><img
-              src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-              alt="Logo"
-            />
-            <span>Code Collab</span></a
-          >
-        </div>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-
-          <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="./contact.html">CONTACT US</a></li>
-          </ul>
-          <a href="./loginpage.html">
-            <button class="login">LOGIN</button>
-          </a>
-           <i class="fa fa-bars" onclick="showMenu()"></i>
-        </div>
-       
-      </nav>
-    </header> -->
+   
 
     <header class="header" id="header">
     <nav>
@@ -1344,14 +1389,14 @@ margin-top: 100px;
                           <div class="form-row">
                             <div class="col-md-4 mb-3">
                               <label for="validationCustom01">First name</label>
-                              <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                              <input type="text" class="form-control" id="validationCustom01" placeholder="First name"  required>
                               <div class="valid-feedback">
                                 Looks good!
                               </div>
                             </div>
                             <div class="col-md-4 mb-3">
                               <label for="validationCustom02">Last name</label>
-                              <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                              <input type="text" class="form-control" id="validationCustom02" placeholder="Last name"  required>
                               <div class="valid-feedback">
                                 Looks good!
                               </div>
@@ -2004,7 +2049,7 @@ margin-top: 100px;
             <div class="info">code-collab@example.com</div>
             <div class="advertise">
               <a href="./register.html">
-                <p>Make a web-confrence with us</p>
+                <p>Start a Web-Confrence</p>
                 <i class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
@@ -2036,6 +2081,17 @@ margin-top: 100px;
       crossorigin="anonymous"
     ></script>
     <script>
+       document.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 10) {
+                header.style.backgroundColor = "black";
+                header.style.opacity = "0.3";
+            } else {
+                header.style.backgroundColor = "  rgb(19, 32, 67)";
+                header.style.opacity = "1";
+            }
+        });
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 

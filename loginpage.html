@@ -9,30 +9,39 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+      }
+      body {
+       
+        background-color: #F1B4BB;
         font-family: "Noto Sans KR", sans-serif;
-        overflow-x: hidden;
+        margin: auto;
+      }
+      .hide{
+        display: none;
       }
       .header {
-        position: fixed;
+      position: sticky;
         top: 0;
-        width: 100%;
+        margin: auto;
+        max-width: 1580px;
         height: 80px;
         background-color: rgb(19, 32, 67);
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: background-color 0.1s ease, opacity 0.3s ease;
         z-index: 1000;
-        overflow: hidden;
       }
 
       nav {
         display: flex;
-        padding: 2% 6%;
+        padding: 0% 6%;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        background-color: rgb(19, 32, 67);
+        color: #FDF0F0;
+        width: 1580px;
+        margin: auto;
       }
 
       nav img {
@@ -47,11 +56,13 @@
         justify-content: flex-end;
         align-items: center;
         overflow: hidden;
+        
       }
 
       .nav-links ul {
         display: flex;
         justify-content: flex-end;
+        /* margin-top: 20px; */
       }
 
       .nav-links ul li {
@@ -107,7 +118,7 @@
         border-radius: 15px;
         border: none;
         color: white;
-        padding: 10px;
+        /* padding: 10px;  */
         font-size: 15px;
         cursor: pointer;
       }
@@ -117,229 +128,309 @@
         font-size: 17px;
       }
 
-      /* Footer */
+      /* Hamburger */
 
+       .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+
+        .hamburger.open div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+
+@media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                height: 100vh;
+                top: 0;
+                background-color: rgb(19, 32, 67);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            .nav-links.open {
+                transform: translateX(0%);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul li {
+                padding: 8px 0;
+            }
+
+            .nav-links .login {
+                width: 70px;
+                height: 25px;
+                font-size: 10px;
+            }
+        }
+      /* Footer */
+/* Footer */
+
+      .footer-container-p {
+      width: 100%;
+    }
+
+    footer {
+      background-color: black;
+      height: auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .pages, .category, .resources {
+      margin: 10px 0;
+    }
+
+    .common-footer {
+      color: white;
+      flex-direction: column;
+      font-weight: 300;
+      font-size: 14px;
+      margin: 10px;
+      display: flex;
+    }
+
+    .common-footer a {
+      color: rgb(82, 94, 122);
+      padding: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .footer-with-main-logo {
+      background-color: black;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-border-bottom {
+      width: 100%;
+      background-color: rgb(130, 130, 130);
+      height: 1px;
+    }
+
+    .license-text {
+      color: rgb(70, 80, 106);
+      font-size: 15px;
+      text-align: center;
+      flex: 1;
+      margin-top: 10px;
+    }
+
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .socials .icons {
+      display: flex;
+      color: white;
+      padding: 20px;
+    }
+
+    .socials .icons i {
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .socials .icons .fa-x-twitter:hover {
+      color: rgb(45, 45, 73);
+    }
+
+    .socials .icons .fa-instagram:hover {
+      color: rgb(231, 19, 142);
+    }
+
+    .socials .icons .fa-youtube:hover {
+      color: rgb(211, 0, 0);
+    }
+
+    .socials .icons .fa-facebook:hover {
+      color: rgb(0, 0, 238);
+    }
+
+    .socials .icons .fa-github:hover {
+      color: rgb(94, 94, 94);
+    }
+
+    .info {
+      color: rgb(82, 94, 122);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .advertise a {
+      width: 15em;
+      max-width: 350px;
+      height: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      justify-content: space-between;
+      color: black;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .advertise a:hover {
+      transform: scale(1.02);
+      background-color: wheat;
+      text-decoration: none;
+      color: black;
+    }
+    .advertise a p{
+      margin: 0;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
       footer {
-        width: 100%;
-        background-color: black;
-        height: 22rem;
-        padding: 70px;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .pages {
-        margin-left: 2rem;
-      }
-      .common-footer {
-        display: flex;
-        color: white;
         flex-direction: column;
-        font-weight: 300;
-        font-size: 14px;
+        align-items: center;
       }
-      .common-footer a {
-        color: rgb(82, 94, 122);
-        padding: 5px;
-        text-decoration: none;
-        margin-top: 5px;
-        font-size: 15px;
-        font-weight: 300;
-      }
-      .category {
-        margin-left: 6rem;
-      }
-      .resources {
-        margin-left: 6rem;
+
+      .common-footer {
+        margin: 10px 0;
       }
 
       .footer-with-main-logo {
-        background-color: black;
-        width: 100%;
-        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding-left: 100px;
-        height: 5rem;
+        padding: 20px;
       }
 
-      .footer-border-bottom {
-        width: 100%;
-        background-color: rgb(130, 130, 130);
-        height: 1px;
-      }
       .license-text {
-        color: rgb(70, 80, 106);
-        padding-right: 100px;
-        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
       }
+
       .socials {
-        width: 50rem;
-        display: flex;
-        justify-content: start;
-        flex-flow: column;
-        align-items: end;
-      }
-
-      .socials .icons {
-        display: flex;
-        color: white;
-      }
-      .socials .icons i {
-        padding: 20px;
-        font-size: 30px;
-      }
-
-      .socials .icons .fa-x-twitter:hover {
-        color: rgb(45, 45, 73);
-      }
-      .socials .icons .fa-instagram:hover {
-        color: rgb(231, 19, 142);
-      }
-      .socials .icons .fa-youtube:hover {
-        color: rgb(211, 0, 0);
-      }
-      .socials .icons .fa-facebook:hover {
-        color: rgb(0, 0, 238);
-      }
-      .socials .icons .fa-github:hover {
-        color: rgb(94, 94, 94);
-      }
-
-      .info {
-        color: rgb(82, 94, 122);
-      }
-      .advertise a {
-        width: 350px;
-        height: 50px;
-        background-color: white;
         margin-top: 20px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer {
         padding: 20px;
-        text-decoration: none;
-        justify-content: space-between;
-        color: black;
-      }
-      .advertise a:hover {
-        transform: scale(1.02);
-        background-color: wheat;
-        text-decoration: none;
-        color: black;
       }
 
-      /* Media Queries for Responsiveness */
-      @media (max-width: 768px) {
-        nav img {
-          width: 50px;
-          height: 50px;
-        }
-
-        .nav-links ul {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-links ul li {
-          padding: 10px 0;
-        }
-
-        .nav-links .login {
-          width: 80px;
-          height: 30px;
-          font-size: 12px;
-          margin-left: 15px;
-        }
-
-        .footer-with-main-logo {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          padding: 20px 0;
-        }
-
-        .footer-with-main-logo .logo-container,
-        .footer-with-main-logo .license-text {
-          padding: 10px 0;
-        }
+      .footer-with-main-logo {
+        padding: 10px;
       }
 
-      @media (max-width: 480px) {
-        nav {
-          flex-direction: column;
-        }
-
-        .nav-links ul {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-links ul li {
-          padding: 8px 0;
-        }
-
-        .nav-links .login {
-          width: 70px;
-          height: 25px;
-          font-size: 10px;
-        }
-
-        .footer-with-main-logo {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          padding: 10px 0;
-        }
-
-        .footer-with-main-logo .logo-container,
-        .footer-with-main-logo .license-text {
-          padding: 5px 0;
-        }
-
-        footer {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .common-footer {
-          margin: 10px 0;
-        }
-
-        .socials {
-          width: 100%;
-          align-items: center;
-        }
-
-        .socials .icons {
-          justify-content: center;
-        }
+      .license-text {
+        font-size: 13px;
       }
+
+      .socials .icons i {
+        font-size: 20px;
+        padding: 8px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 250px;
+        padding: 8px;
+      }
+    }
+
     </style>
   </head>
   <body>
     <header class="header" id="header">
       <nav>
         <div class="logo-container">
-          <a href="index.html"
-            ><img
+          <a href="index.html">
+            <img
               src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
               alt="Logo"
             />
-            <span>Code Collab</span></a
-          >
+            <span>Code Collab</span>
+          </a>
         </div>
         <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-
           <ul>
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="./index.html">HOME</a></li>
             <li><a href="./about.html">ABOUT</a></li>
             <li><a href="./course.html">COURSE</a></li>
             <li><a href="./blog.html">BLOG</a></li>
             <li><a href="./contact.html">CONTACT US</a></li>
           </ul>
+          <a href="./loginpage.html">
+            <button class="login">LOGIN</button>
+          </a>
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </nav>
     </header>
 
@@ -423,75 +514,95 @@
         </p>
       </div>
     </div>
-
-    <footer>
-      <div class="pages common-footer">
-        <h3>Pages</h3>
-        <a href="">About us</a>
-        <a href="">News</a>
-        <a href="">Authors</a>
-        <a href="">Newsletters Plans</a>
-        <a href="">Contact us</a>
-        <a href="">Sign up</a>
-      </div>
-      <div class="category common-footer">
-        <h3>Category</h3>
-        <a href="">Health</a>
-        <a href="">Politics</a>
-        <a href="">Sports</a>
-        <a href="">World News</a>
-        <a href="">Business</a>
-        <a href="">Technology</a>
-      </div>
-      <div class="resources common-footer">
-        <h3>Resources</h3>
-        <a href="">Privacy Policy</a>
-        <a href="">Advertise</a>
-        <a href="">Terms & Conditions</a>
-        <a href="">License</a>
-        <a href="">Style Guide</a>
-      </div>
-      <div class="socials">
-        <div class="icons">
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-github"></i>
+<div class="footer-container-p">
+      <footer>
+          <div class="pages common-footer">
+            <h3>Pages</h3>
+            <a href="">About us</a>
+            <a href="">News</a>
+            <a href="">Authors</a>
+            <a href="">Newsletters Plans</a>
+            <a href="">Contact us</a>
+            <a href="">Sign up</a>
+          </div>
+          <div class="category common-footer">
+            <h3>Category</h3>
+            <a href="">Health</a>
+            <a href="">Politics</a>
+            <a href="">Sports</a>
+            <a href="">World News</a>
+            <a href="">Business</a>
+            <a href="">Technology</a>
+          </div>
+          <div class="resources common-footer">
+            <h3>Resources</h3>
+            <a href="">Privacy Policy</a>
+            <a href="">Advertise</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">License</a>
+            <a href="">Style Guide</a>
+          </div>
+          <div class="socials">
+            <div class="icons">
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="info">code-collab@example.com</div>
+            <div class="advertise">
+              <a href="./register.html">
+                <p>Start a Web-Confrence</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </footer>
+        <div class="footer-border-bottom"></div>
+        <div class="footer-with-main-logo">
+           <div class="logo-container" >
+            <a href="index.html"
+              ><img
+                src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                alt="Logo"
+                width="70px"
+                height="70px"
+                style="border-radius: 50px;"
+              />
+              <span>Code Collab</span></a
+            >
+          </div>
+          <div class="license-text">
+            © 2024 Code-Collab. Designed by freedom-developers-005. Powered by Masai.
+          </div>
         </div>
-        <div class="info">code-collab@example.com</div>
-        <div class="advertise">
-          <a href="./register.html">
-            <p>Make a web-conference with us</p>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-    </footer>
-    <div class="footer-border-bottom"></div>
-    <div class="footer-with-main-logo">
-      <div class="logo-container">
-        <a href="index.html"
-          ><img
-            src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
-            alt="Logo"
-            width="70px"
-            height="70px"
-            style="border-radius: 50px"
-          />
-          <span>Code Collab</span></a
-        >
-      </div>
-      <div class="license-text">
-        © 2024 Code-Collab. Designed by freedom-developers-005. Powered by
-        Masai.
       </div>
     </div>
-
     <script
       src="https://kit.fontawesome.com/52cf30c454.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+       document.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 10) {
+                header.style.backgroundColor = "black";
+                header.style.opacity = "0.3";
+            } else {
+                header.style.backgroundColor = "  rgb(19, 32, 67)";
+                header.style.opacity = "1";
+            }
+        });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
   </body>
