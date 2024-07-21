@@ -17,7 +17,8 @@ code-collab/
 |--script.js
 
 ## Video Walkthrough of the project
-Attach a very short video walkthough of all of the features [ 1 - 3 minutes ]
+[Project_Presentation](https://www.youtube.com/watch?v=QCtp0gjSV7Q)
+
 
 ## Features
 List out the key features of your application.
