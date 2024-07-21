@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      a{
+        text-decoration: none;
+      }
+      body {
+       
+        background-color: rgb(19, 32, 67);
+        font-family: "Noto Sans KR", sans-serif;
+        margin: auto;
+      }
+      .hide{
+        display: none;
+      }
+      .header {
+      position: sticky;
+        top: 0;
+        margin: auto;
+       
+        /* border: 1px solid red; */
+        max-width: 1580px;
+        height: 80px;
+        background-color: rgb(19, 32, 67);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        padding: 0% 6%;
+        justify-content: space-between;
+        align-items: center;
+        color: #FDF0F0;
+        width: 1580px;
+        margin: auto;
+      }
+
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: hidden;
+        
+      }
+
+      .nav-links ul {
+        display: flex;
+        justify-content: flex-end;
+        /* margin-top: 20px; */
+      }
+
+      .nav-links ul li {
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+
+      nav .fa {
+        display: none;
+      }
+
+      .logo-container a {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+      }
+
+      .nav-links .login {
+        width: 100px;
+        height: 35px;
+        margin-left: 35px;
+        background-color: green;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        /* padding: 10px;  */
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nav-links .login:hover {
+        background-color: rgb(39, 202, 39);
+        font-size: 17px;
+      }
+
+      /* Hamburger */
+
+       .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+
+        .hamburger.open div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+        
+@media (max-width: 950px){
+  .nav-links ul li a{
+    font-size: 10px;
+    /* padding: 5px; */
+  }
+}
+
+@media(max-width: 750px){
+          .about-values-container {
+            grid-template-areas: "a1"
+                                 "a2"
+                                 "a3"
+                                 "a4";
+        }
+        }
+
+
+@media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                height: 100vh;
+                top: 0;
+                background-color: rgb(19, 32, 67);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            .nav-links.open {
+                transform: translateX(0%);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                /* flex-direction: column; */
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul li {
+                padding: 8px 0;
+            }
+
+            .nav-links .login {
+                width: 70px;
+                height: 25px;
+                font-size: 10px;
+            }
+        }
+      
+        /* Atul Code */
+
+
+        .about-app-main {
+            margin: auto;
+            max-width: 1518px;
+            padding-top: 100px;
+        }
+
+        .about-header {
+            text-align: center;
+            padding: 20px 0;
+            /* margin: -20px 70px 50px 5px; */
+        }
+
+        .about-ourvalues {
+            font-size: 38px;
+            color: #555;
+            margin: 20px 500px 10px 500px;
+        }
+
+        .about-ourvalues-header {
+            font-size: 60px;
+            margin: 10px 170px 100px 170px;
+        }
+
+        .about-values-container {
+            display: grid;
+            grid-template-areas: "a1 a2"
+                "a3 a4";
+        }
+
+        .about-header-para {
+            margin: -50px 100px 10px 5px;
+        }
+
+        .about-top-para {
+            margin: 0px 200px 150px 5px;
+        }
+
+        /* .value-imgtext-container {
+            display: grid;
+            grid-template-areas: "a1 a2"
+                                 "a3 a4";
+        } */
+        .about-values-container>div:nth-of-type(1) {
+            grid-area: a1;
+
+        }
+
+        .about-values-container>div:nth-of-type(2) {
+            grid-area: a2;
+            margin-top: 220px;
+        }
+
+        .about-values-container>div:nth-of-type(3) {
+            grid-area: a3;
+            margin-top: -20px;
+        }
+
+        .about-values-container>div:nth-of-type(4) {
+            grid-area: a4;
+            margin-top: 220px;
+        }
+
+        .about-values-container div {
+            padding: 5px;
+        }
+
+        .value-imgtext-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-container-heading {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+
+
+
+        .text {
+            font-size: 25px;
+            color: #333;
+            text-align: center;
+            margin: 20px 80px;
+        }
+
+        /* Footer */
+
+      .footer-container-p {
+     
+       margin: auto;
+         max-width: 1580px;
+    }
+
+    footer {
+      background-color: black;
+      height: auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .pages, .category, .resources {
+      margin: 10px 0;
+    }
+
+    .common-footer {
+      color: white;
+      flex-direction: column;
+      font-weight: 300;
+      font-size: 14px;
+      margin: 10px;
+      display: flex;
+    }
+
+    .common-footer a {
+      color: rgb(82, 94, 122);
+      padding: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .footer-with-main-logo {
+      background-color: black;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-border-bottom {
+      width: 100%;
+      background-color: rgb(130, 130, 130);
+      height: 1px;
+    }
+
+    .license-text {
+      color: rgb(70, 80, 106);
+      font-size: 15px;
+      text-align: center;
+      flex: 1;
+      margin-top: 10px;
+      text-align: end;
+    }
+
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .socials .icons {
+      display: flex;
+      color: white;
+      padding: 20px;
+    }
+
+    .socials .icons i {
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .socials .icons .fa-x-twitter:hover {
+      color: rgb(45, 45, 73);
+    }
+
+    .socials .icons .fa-instagram:hover {
+      color: rgb(231, 19, 142);
+    }
+
+    .socials .icons .fa-youtube:hover {
+      color: rgb(211, 0, 0);
+    }
+
+    .socials .icons .fa-facebook:hover {
+      color: rgb(0, 0, 238);
+    }
+
+    .socials .icons .fa-github:hover {
+      color: rgb(94, 94, 94);
+    }
+
+    .info {
+      color: rgb(82, 94, 122);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .advertise a {
+      width: 15em;
+      max-width: 350px;
+      height: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      justify-content: space-between;
+      color: black;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .advertise a:hover {
+      transform: scale(1.02);
+      background-color: wheat;
+      text-decoration: none;
+      color: black;
+    }
+    .advertise a p{
+      margin: 0;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .common-footer {
+        margin: 10px 0;
+      }
+
+      .footer-with-main-logo {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .license-text {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .socials {
+        margin-top: 20px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer {
+        padding: 20px;
+      }
+
+      .footer-with-main-logo {
+        padding: 10px;
+      }
+
+      .license-text {
+        font-size: 13px;
+      }
+
+      .socials .icons i {
+        font-size: 20px;
+        padding: 8px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 250px;
+        padding: 8px;
+      }
+    }
+
+ 
+    </style>
+</head>
+
+<body style="background-color: rgba(214, 189, 152, 1);">
+    <header class="header" id="header">
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg" alt="Logo"/>
+                <span>Code Collab</span>
+            </a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
+                <li><a href="./course.html">COURSE</a></li>
+                <li><a href="./blog.html">BLOG</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+            </ul>
+            <a href="./loginpage.html">
+                <button class="login">LOGIN</button>
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+    <main class="about-app-main">
+        <section class="about-section-container">
+            <div class="about-container">
+                <div class="about-header">
+                    <div class="about-header">
+
+                        <div class="about-header-para">
+                            <h1 style="text-align: start;font-size: 100px; font-weight: 200;">From Croatian shores to
+                                global frontiers</h1>
+                            <br><br><br>
+                            <div class="about-top-para">
+                                <p
+                                    style="text-align: start; font-size: 30px; color: rgb(89, 96, 110); font-weight: 50;">
+                                    We’re an agency founded on the belief that
+                                    challenging core assumptions unlocks transformative solutions. From our
+                                    humble beginnings on Island Krk to a global team spanning multiple nationalities, we
+                                    defy expectations, guided by
+                                    focus
+                                    and determination to do our best work.</p>
+                                <br><br>
+                                <p
+                                    style="text-align: start; font-size: 30px; color: rgb(104, 109, 118); font-weight: 50;">
+                                    We believe in learning through doing,
+                                    embracing the road less traveled, and continually striving to improve. Open
+                                    communication and mindful listening guide our approach, ensuring we understand,
+                                    adapt, and push forward in
+                                    everything we
+                                    do.</p>
+                            </div>
+                        </div>
+                        <p class="about-ourvalues">Our Values</p>
+                        <h2 style="color: rgb(19, 75, 112); font-weight: 500;" class="about-ourvalues-header">Through
+                            the years, we have been shaped and formed by both
+                            successes and failures.</h2>
+
+                        <div class="about-values-container">
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_1Challenge-Black.gif"
+                                    alt="1st">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px; font-weight: 150;"
+                                    class="text-container-heading">Challenge Core Assumptions</h2>
+                                <p class="text">At the heart of our journey lies this singular idea. We believe that by
+                                    bravely
+                                    questioning our own and our clients’ assumptions about their brand, website, and
+                                    product, we
+                                    can uncover new solutions and ideas. While some might assume we could not run a
+                                    thriving
+                                    digital agency from a Croatian Island, we continue to challenge this particular
+                                    assumption
+                                    every single day.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_2Learning-Black.gif"
+                                    alt="2nd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Learning Through Doing</h2>
+                                <p class="text">We approach every problem with an open mind, and sometimes finding the
+                                    best
+                                    solutions means taking the road less traveled. Embracing experimentation, venturing
+                                    into the
+                                    unknown, or even stumbling occasionally is all part of the process. Because every
+                                    step, even
+                                    the missteps, deepens our understanding and hones our craft. Learning by doing—it’s
+                                    how we
+                                    grow.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_3Focus-Pure-Black.gif"
+                                    alt="3rd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Focus and Determination</h2>
+                                <p class="text">When we say yes to a project, it’s because we truly believe in it. Our
+                                    commitment means giving it our all, every time.
+                                    If there’s a way to improve, streamline or make something better, we’ll pursue it,
+                                    even if it means stepping out of our
+                                    comfort zone. For us it’s not about meeting expectations, it’s about our
+                                    determination to create something that truly
+                                    resonates with people.</p>
+                            </div>
+                            <div class="value-imgtext-container">
+                                <img class="imgA" loading="lazy" decoding="async" width="500" height="500"
+                                    src="https://bb.agency/wp-content/uploads/2023/10/BB_About_2_4ListenB-Black.gif"
+                                    alt="2nd">
+                                <h2 style="color: rgb(73, 152, 171); font-size: 40px;font-weight: 150;"
+                                    class="text-container-heading">Listen Smart</h2>
+                                <p class="text">We take an open-door approach to communication, with both our clients
+                                    and each other. Every voice is important, and
+                                    we’re never too busy to listen. To us, listening smart goes beyond just hearing
+                                    words—it means understanding without
+                                    barriers of ego, being mindful to perspectives and insights, and always being open
+                                    to change and growth.</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+   <div class="footer-container-p">
+      <footer>
+          <div class="pages common-footer">
+            <h3>Pages</h3>
+            <a href="">About us</a>
+            <a href="">News</a>
+            <a href="">Authors</a>
+            <a href="">Newsletters Plans</a>
+            <a href="">Contact us</a>
+            <a href="">Sign up</a>
+          </div>
+          <div class="category common-footer">
+            <h3>Category</h3>
+            <a href="">Health</a>
+            <a href="">Politics</a>
+            <a href="">Sports</a>
+            <a href="">World News</a>
+            <a href="">Business</a>
+            <a href="">Technology</a>
+          </div>
+          <div class="resources common-footer">
+            <h3>Resources</h3>
+            <a href="">Privacy Policy</a>
+            <a href="">Advertise</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">License</a>
+            <a href="">Style Guide</a>
+          </div>
+          <div class="socials">
+            <div class="icons">
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="info">code-collab@example.com</div>
+            <div class="advertise">
+              <a href="./register.html">
+                <p>Start a Web-Confrence</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </footer>
+        <div class="footer-border-bottom"></div>
+        <div class="footer-with-main-logo">
+           <div class="logo-container" >
+            <a href="index.html"
+              ><img
+                src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                alt="Logo"
+                width="70px"
+                height="70px"
+                style="border-radius: 50px;"
+              />
+              <span>Code Collab</span></a
+            >
+          </div>
+          <div class="license-text">
+            © 2024 Code-Collab. Designed by freedom-developers-005. Powered by Masai.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 10) {
+                header.style.backgroundColor = "black";
+                header.style.opacity = "0.3";
+            } else {
+                header.style.backgroundColor = "  rgb(19, 32, 67)";
+                header.style.opacity = "1";
+            }
+        });
+
+        
+    </script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+</script>
+    <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/52cf30c454.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <script
+      src="https://kit.fontawesome.com/ddbbfe1c32.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      a{
+        text-decoration: none;
+      }
+      body {
+       
+        background-color: rgb(19, 32, 67);
+        font-family: "Noto Sans KR", sans-serif;
+        margin: auto;
+      }
+      .hide{
+        display: none;
+      }
+      .header {
+      position: sticky;
+        top: 0;
+        margin: auto;
+       
+        /* border: 1px solid red; */
+        max-width: 1580px;
+        height: 80px;
+        background-color: rgb(19, 32, 67);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease, opacity 0.3s ease;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        padding: 0% 6%;
+        justify-content: space-between;
+        align-items: center;
+        color: #FDF0F0;
+        width: 1580px;
+        margin: auto;
+      }
+
+      nav img {
+        width: 75px;
+        height: 68px;
+        border-radius: 53px;
+      }
+
+      .nav-links {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: hidden;
+        
+      }
+
+      .nav-links ul {
+        display: flex;
+        justify-content: flex-end;
+        /* margin-top: 20px; */
+      }
+
+      .nav-links ul li {
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #ff0000;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+
+      nav .fa {
+        display: none;
+      }
+
+      .logo-container a {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-container a span {
+        color: white;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 2px solid red;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+        text-decoration: none;
+      }
+
+      .nav-links .login {
+        width: 100px;
+        height: 35px;
+        margin-left: 35px;
+        background-color: green;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        /* padding: 10px;  */
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nav-links .login:hover {
+        background-color: rgb(39, 202, 39);
+        font-size: 17px;
+      }
+
+      /* Hamburger */
+
+       .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+
+        .hamburger.open div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+@media (max-width: 950px){
+  .nav-links ul li a{
+    font-size: 10px;
+    /* padding: 5px; */
+  }
+}
+
+@media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0;
+                height: 100vh;
+                top: 0;
+                background-color: rgb(19, 32, 67);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            .nav-links.open {
+                transform: translateX(0%);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                /* flex-direction: column; */
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul li {
+                padding: 8px 0;
+            }
+
+            .nav-links .login {
+                width: 70px;
+                height: 25px;
+                font-size: 10px;
+            }
+        }
+      
+        /* Appu Code */
+
+
+      section#s1 .container {
+        margin: auto;
+         max-width: 1580px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: white;
+      }
+
+      section#s1 .container .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin: 60px;
+      }
+      section#s1 .container .heading > img {
+        height: 200px;
+        width: 200px;
+       
+        margin-bottom: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        /* margin-left: 15%; */
+      }
+      section#s1 .container .heading p {
+        word-break: break-all;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      section#s1 .container .heading p > a {
+        color: blue;
+      }
+
+      section#s1 .container .heading .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      section#s1 .container .heading .main-content .mc {
+        padding: 10px;
+        border-radius: 10px;
+        margin: 4px;
+      }
+
+      section#s1 .container .heading .main-content > div:nth-of-type(1) {
+        background-color: rgb(240, 232, 253);
+      }
+
+      section#s1 .container .heading .main-content .mc:hover {
+        background-color: rgb(240, 232, 253);
+        border-radius: 10px;
+      }
+
+      section#s1 .container .content .blog > h3 {
+        font-size: 40px;
+        font-weight: 800;
+      }
+      section#s1 .container .content .blog .writer {
+        display: flex;
+        align-items: center;
+      }
+
+      section#s1 .container .content .blog .writer > img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      section#s1 .container .content .blog .writer span,
+      div {
+        margin: 10px;
+      }
+      section#s1 .container .content .blog .writer > div {
+        display: flex;
+        align-items: center;
+      }
+
+      section#s1 .container .content .blog > p {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      section#s1 .container .content .blog .pt1 ul {
+        padding: 20px;
+      }
+
+      section#s1 .container .content .blog > h2 {
+        font-size: 30px;
+        padding: 5px;
+      }
+      section#s1 .container .content .blog > p {
+        padding: 5px;
+      }
+      section#s1 .container .content .blog > p:nth-of-type(3) {
+        margin-bottom: 40px;
+      }
+
+      /* footer */
+/* Footer */
+
+      .footer-container-p {
+       margin: auto;
+         max-width: 1580px;
+      overflow-x: hidden;
+    }
+
+    footer {
+      background-color: black;
+      height: auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      overflow-x: hidden;
+      
+    }
+
+    .pages, .category, .resources {
+      margin: 10px 0;
+    }
+
+    .common-footer {
+      color: white;
+      flex-direction: column;
+      font-weight: 300;
+      font-size: 14px;
+      /* margin: 10px; */
+      display: flex;
+    }
+
+    .common-footer a {
+      color: rgb(82, 94, 122);
+      padding: 5px;
+      text-decoration: none;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .footer-with-main-logo {
+      background-color: black;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+
+    .footer-border-bottom {
+      width: 100%;
+      background-color: rgb(130, 130, 130);
+      height: 1px;
+    }
+
+    .license-text {
+      color: rgb(70, 80, 106);
+      font-size: 15px;
+      text-align: center;
+      flex: 1;
+      margin-top: 10px;
+      text-align: end;
+    }
+
+    .socials {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .socials .icons {
+      display: flex;
+      color: white;
+      padding: 20px;
+    }
+
+    .socials .icons i {
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .socials .icons .fa-x-twitter:hover {
+      color: rgb(45, 45, 73);
+    }
+
+    .socials .icons .fa-instagram:hover {
+      color: rgb(231, 19, 142);
+    }
+
+    .socials .icons .fa-youtube:hover {
+      color: rgb(211, 0, 0);
+    }
+
+    .socials .icons .fa-facebook:hover {
+      color: rgb(0, 0, 238);
+    }
+
+    .socials .icons .fa-github:hover {
+      color: rgb(94, 94, 94);
+    }
+
+    .info {
+      color: rgb(82, 94, 122);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .advertise a {
+      width: 15em;
+      max-width: 350px;
+      height: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      justify-content: space-between;
+      color: black;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .advertise a:hover {
+      transform: scale(1.02);
+      background-color: wheat;
+      text-decoration: none;
+      color: black;
+    }
+    .advertise a p{
+      margin: 0;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .common-footer {
+        margin: 10px 0;
+      }
+
+      .footer-with-main-logo {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .license-text {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .socials {
+        margin-top: 20px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer {
+        padding: 20px;
+      }
+
+      .footer-with-main-logo {
+        padding: 10px;
+      }
+
+      .license-text {
+        font-size: 13px;
+      }
+
+      .socials .icons i {
+        font-size: 20px;
+        padding: 8px;
+      }
+
+      .advertise a {
+        width: 100%;
+        max-width: 250px;
+        padding: 8px;
+      }
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg" alt="Logo"/>
+                <span>Code Collab</span>
+            </a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
+                <li><a href="./course.html">COURSE</a></li>
+                <li><a href="./blog.html">BLOG</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+            </ul>
+            <a href="./loginpage.html">
+                <button class="login">LOGIN</button>
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+    </header>
+    <section id="s1">
+      <div class="container">
+        <div class="heading">
+          <img
+            src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+          />
+          <p>
+            News and announcements for all things of
+            <a href="#">code-collab</a>, including new releases,
+            <a href="#">Important Talk</a>, and code-collab
+            <a href="#">Investors</a>.
+          </p>
+          <div class="main-content">
+            <div class="mc">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>All posts</span>
+            </div>
+
+            <div class="mc">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Archive</span>
+            </div>
+            <div class="mc">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Videos</span>
+            </div>
+            <div class="mc">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Subscribe</span>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="blog">
+            <h3>Code-Collab 1.1.1</h3>
+            <div class="writer">
+              <img
+                src="https://avatars.githubusercontent.com/u/97456502?v=4"
+              />
+              <span> &commat; Aman Bind</span>
+              <div>
+                <i class="fa-solid fa-box-archive"></i>
+                <span>July 19, 2024</span>
+              </div>
+            </div>
+            <p>
+              Code-Collab v1.1.1 is here with new features, documentation
+              improvements, and more follow-up enhancements for color modes.
+            </p>
+            <div id="pt1" class="pt1">
+              <h2>Highlights</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt2" class="pt1">
+              <h2>Features</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt3" class="pt1">
+              <h2>Miscellaneours</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt4" class="pt1">
+              <h2>Docs</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <h2>Get the release</h2>
+            <p>
+              Head to <a href="#">https://code-collab.com</a> for the latest.
+            </p>
+            <h2>Support the team</h2>
+            <p>
+              Visit our <a href="#">Open Collective page</a> or our
+              <a href="#">team members</a>’ GitHub profiles to help support the
+              maintainers contributing to code-collab.
+            </p>
+          </div>
+          <div class="blog">
+            <h3>Code-Collab 1.1.2</h3>
+            <div class="writer">
+              <img
+                src="https://ca.slack-edge.com/T078YBF4E9W-U078MPK21L4-69ed4f89fda8-512"
+              />
+              <span> &commat;Appu Kumar</span>
+              <div>
+                <i class="fa-solid fa-box-archive"></i>
+                <span>July 19, 2024</span>
+              </div>
+            </div>
+            <p>
+              Code-Collab v1.1.1 is here with new features, documentation
+              improvements, and more follow-up enhancements for color modes.
+            </p>
+            <div id="pt1" class="pt1">
+              <h2>Highlights</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt2" class="pt1">
+              <h2>Features</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt3" class="pt1">
+              <h2>Miscellaneours</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt4" class="pt1">
+              <h2>Docs</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <h2>Get the release</h2>
+            <p>
+              Head to <a href="#">https://code-collab.com</a> for the latest.
+            </p>
+            <h2>Support the team</h2>
+            <p>
+              Visit our <a href="#">Open Collective page</a> or our
+              <a href="#">team members</a>’ GitHub profiles to help support the
+              maintainers contributing to code-collab.
+            </p>
+          </div>
+
+          <div class="blog">
+            <h3>Code-Collab 1.1.1</h3>
+            <div class="writer">
+              <img
+                src="https://avatars.githubusercontent.com/u/108671779?v=4"
+              />
+              <span> &commat; Prajjwal R. Chauhan</span>
+              <div>
+                <i class="fa-solid fa-box-archive"></i>
+                <span>July 19, 2024</span>
+              </div>
+            </div>
+            <p>
+              Code-Collab v1.1.1 is here with new features, documentation
+              improvements, and more follow-up enhancements for color modes.
+            </p>
+            <div id="pt1" class="pt1">
+              <h2>Highlights</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt2" class="pt1">
+              <h2>Features</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt3" class="pt1">
+              <h2>Miscellaneours</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt4" class="pt1">
+              <h2>Docs</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <h2>Get the release</h2>
+            <p>
+              Head to <a href="#">https://code-collab.com</a> for the latest.
+            </p>
+            <h2>Support the team</h2>
+            <p>
+              Visit our <a href="#">Open Collective page</a> or our
+              <a href="#">team members</a>’ GitHub profiles to help support the
+              maintainers contributing to code-collab.
+            </p>
+          </div>
+
+          <div class="blog">
+            <h3>Code-Collab 1.1.0</h3>
+            <div class="writer">
+              <img
+                src="https://avatars.githubusercontent.com/u/86400987?s=400&u=272d61ac7962f4f5af88bdaf6161d79bed7f99d8&v=4"
+              />
+              <span> &commat; Atul Raman</span>
+              <div>
+                <i class="fa-solid fa-box-archive"></i>
+                <span>July 19, 2024</span>
+              </div>
+            </div>
+            <p>
+              Code-Collab v1.1.1 is here with new features, documentation
+              improvements, and more follow-up enhancements for color modes.
+            </p>
+            <div id="pt1" class="pt1">
+              <h2>Highlights</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt2" class="pt1">
+              <h2>Features</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt3" class="pt1">
+              <h2>Miscellaneours</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <div id="pt4" class="pt1">
+              <h2>Docs</h2>
+              <ul>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta corporis in dicta quae, repellendus sint ex sequi
+                  aspernatur architecto facere doloribus, blanditiis accusantium
+                  fugit! Sint consequuntur a asperiores doloribus ducimus veniam
+                  qui aliquid porro itaque commodi, deleniti voluptate impedit
+                  et blanditiis quo expedita magni quos dolor repellendus natus.
+                  Ratione, sequi?
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  nobis necessitatibus iusto soluta, expedita neque temporibus
+                  eius ex laudantium esse obcaecati natus animi deserunt ab
+                  debitis porro dolor vitae dolorum tempore? Natus eligendi
+                  aspernatur eius quasi harum consequuntur praesentium in?
+                </li>
+              </ul>
+            </div>
+
+            <h2>Get the release</h2>
+            <p>
+              Head to <a href="#">https://code-collab.com</a> for the latest.
+            </p>
+            <h2>Support the team</h2>
+            <p>
+              Visit our <a href="#">Open Collective page</a> or our
+              <a href="#">team members</a>’ GitHub profiles to help support the
+              maintainers contributing to code-collab.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+   <div class="footer-container-p" style="margin: auto;">
+      <footer>
+          <div class="pages common-footer">
+            <h3>Pages</h3>
+            <a href="">About us</a>
+            <a href="">News</a>
+            <a href="">Authors</a>
+            <a href="">Newsletters Plans</a>
+            <a href="">Contact us</a>
+            <a href="">Sign up</a>
+          </div>
+          <div class="category common-footer">
+            <h3>Category</h3>
+            <a href="">Health</a>
+            <a href="">Politics</a>
+            <a href="">Sports</a>
+            <a href="">World News</a>
+            <a href="">Business</a>
+            <a href="">Technology</a>
+          </div>
+          <div class="resources common-footer">
+            <h3>Resources</h3>
+            <a href="">Privacy Policy</a>
+            <a href="">Advertise</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">License</a>
+            <a href="">Style Guide</a>
+          </div>
+          <div class="socials">
+            <div class="icons">
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="info">code-collab@example.com</div>
+            <div class="advertise">
+              <a href="./register.html">
+                <p>Start a Web-Confrence</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </footer>
+        <div class="footer-border-bottom" style="margin: auto;"></div>
+        <div class="footer-with-main-logo">
+           <div class="logo-container" >
+            <a href="index.html"
+              ><img
+                src="https://st2.depositphotos.com/42546960/42289/v/450/depositphotos_422894620-stock-illustration-letter-logo-design-vector-template.jpg"
+                alt="Logo"
+                width="70px"
+                height="70px"
+                style="border-radius: 50px;"
+              />
+              <span>Code Collab</span></a
+            >
+          </div>
+          <div class="license-text">
+            © 2024 Code-Collab. Designed by freedom-developers-005. Powered by Masai.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/52cf30c454.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 10) {
+                header.style.backgroundColor = "black";
+                header.style.opacity = "0.3";
+            } else {
+                header.style.backgroundColor = "  rgb(19, 32, 67)";
+                header.style.opacity = "1";
+            }
+        });
+
+      const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+    </script>
+
+    
+  </body>
+</html>
